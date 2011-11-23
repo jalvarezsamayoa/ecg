@@ -8,7 +8,7 @@ gem "RedCloth", ">=4.2.2"
 gem "searchlogic"#, :git => "git://github.com/binarylogic/searchlogic.git", :tag => 'v2.5.8'
 
 group :development do
-  gem "sqlite3"
+  gem "mysql"
   gem "capistrano"
   gem "capistrano-ext"
   # gem "mongrel"

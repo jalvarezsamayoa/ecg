@@ -18,6 +18,7 @@ set :repository,  "git://github.com/Ravenna/ecg.git"
 # set :scm, :subversion
 set :scm, :git
 set :branch, 'master'
+set :branch, "will-paginate"
 
 
 
