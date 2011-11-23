@@ -1,11 +1,3 @@
-GIT
-  remote: git://github.com/mislav/will_paginate
-  revision: a293556ae682fdd6ba3bb59affcae246b2e444ee
-  tag: 2.3.6
-  specs:
-    will_paginate (2.3.6)
-      activesupport (>= 1.4.4)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -50,6 +42,7 @@ GEM
       activerecord (~> 2.3.11)
       activerecord (~> 2.3.11)
     sqlite3 (1.3.4)
+    will_paginate (2.3.16)
 
 PLATFORMS
   ruby
@@ -63,4 +56,4 @@ DEPENDENCIES
   rake
   searchlogic
   sqlite3
-  will_paginate (= 2.3.6)!
+  will_paginate (~> 2.3.16)
