@@ -1,5 +1,5 @@
 class BrandsController < ApplicationController
-   require 'will_paginate/array'
+
    before_filter :find_categories
    before_filter :login_required, :only => [ :index, :new, :edit ]
 
