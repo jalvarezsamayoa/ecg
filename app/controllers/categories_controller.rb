@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-require 'will_paginate/array'
+
   before_filter :login_required, :only => [ :index, :edit ]
   before_filter :find_categories
 
