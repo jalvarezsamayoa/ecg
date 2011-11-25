@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  
+require 'will_paginate/array'
   before_filter :login_required, :only => [ :index, :edit ]
   before_filter :find_categories
 
@@ -26,9 +26,7 @@ class CategoriesController < ApplicationController
       format.html do |wants|
               @brand = @brands.first     
               @search = Product.find(:all, :conditions => {:brand_id => @brand.id, :category_id => @category.id})
-              #brand_id_equals(@brand.id).category_id_equals(@category.id)
-
-              @products = @search.paginate(:page => params[:page])
+              @products = @search.paginate :page => params[:page]
               render :template => 'brands/show'
       end
       format.xml  { render :xml => @category }

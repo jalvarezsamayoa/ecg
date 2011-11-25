@@ -56,4 +56,4 @@ DEPENDENCIES
   rake
   searchlogic
   sqlite3
-  will_paginate (~> 2.3.16)
+  will_paginate (~> 2.3.15)

@@ -1,4 +1,5 @@
 class BrandsController < ApplicationController
+   require 'will_paginate/array'
    before_filter :find_categories
    before_filter :login_required, :only => [ :index, :new, :edit ]
 
@@ -16,10 +17,13 @@ class BrandsController < ApplicationController
   # GET /brands/1
   # GET /brands/1.xml
   def show
-    @category = Category.find_by_url_name(params[:category_id])
-       @brand = Brand.find(params[:id])
-       @search = Product.order(params[:order] || :descend_by_price).find(:all, :conditions => {:brand_id => @brand.id, :category_id => @category.id})
-       @products = @search.paginate(:page => params[:page])
+       @category = Category.find_by_url_name(params[:category_id])
+          @brand = Brand.find(params[:id])
+          @search = Product.find(:all, :conditions => {:brand_id => @brand.id, :category_id => @category.id})
+          @products = @search.paginate(:page => params[:page])
+       
+       #@search = Product.order(params[:order] || :descend_by_price).find(:all, :conditions => {:brand_id => @brand.id, :category_id => @category.id})
+       #@products = @search.paginate(:page => params[:page])
     
     @meta_title = "#{@brand.name}"
     respond_to do |format|
