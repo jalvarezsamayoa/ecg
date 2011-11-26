@@ -5,9 +5,9 @@ source "http://rubygems.org"
 gem "rails", '2.3.11'
 gem "rake"
 gem "RedCloth", ">=4.2.2"
-gem "will_paginate", "~> 2.3.15", :require => nil
-gem "searchlogic"#, :git => "git://github.com/binarylogic/searchlogic.git", :tag => 'v2.5.8'
 
+#gem "searchlogic"#, :git => "git://github.com/binarylogic/searchlogic.git", :tag => 'v2.5.8'
+gem "will_paginate", "~> 2.3.16"
 
 group :development do
   gem "mysql"
