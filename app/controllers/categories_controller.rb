@@ -25,8 +25,9 @@ class CategoriesController < ApplicationController
     respond_to do |format|
       format.html do |wants|
               @brand = @brands.first   
-              @products = Product.all.paginate(:page => params[:page], :per_page => 6,  :conditions => ['brand_id = ? AND category_id = ?', @brand.id, @category.id])
-             
+                @search = Product.all(:conditions => {'brand_id' => @brand.id, 'category_id' => @category.id})
+                 @products = @search.paginate(:page => params[:page], :per_page => 12)
+                      #.order(params[:order] || :descend_by_price)
              
               render :template => 'brands/show'
       end
