@@ -25,8 +25,9 @@ class CategoriesController < ApplicationController
     respond_to do |format|
       format.html do |wants|
               @brand = @brands.first   
-              @search = Product.find(:all, :conditions => {:brand_id => @brand.id, :category_id => @category.id}).paginate( :page => params[:page], :per_page => 6)
-              @products = @search
+              @products = Product.all.paginate(:page => params[:page], :per_page => 6,  :conditions => ['brand_id = ? AND category_id = ?', @brand.id, @category.id])
+             
+             
               render :template => 'brands/show'
       end
       format.xml  { render :xml => @category }
