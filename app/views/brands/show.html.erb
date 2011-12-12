@@ -10,10 +10,10 @@
 		<h5 id="sub_green_head"><%= @brand.name unless @brand.nil? %></h5>
 	
 		
-        <!--<%#- form_for [@category, @brand], :html => {:method => 'get', :id => 'sort_form', :class => 'sort_form'} do -%>
-          <label>Sort by: </label> <%#= select_tag :order, product_sort_options %>
-          <%#= submit_tag 'Go' %>
-        <%#- end -%>-->
+        <%- form_for [@category, @brand], :html => {:method => 'get', :id => 'sort_form', :class => 'sort_form'} do -%>
+          <label>Sort by: </label> <%= select_tag :order, product_sort_options %>
+          <%= submit_tag 'Go' %>
+        <%- end -%>
         <script type="text/javascript" charset="utf-8">
         (function($){
           var f = $('#sort_form')

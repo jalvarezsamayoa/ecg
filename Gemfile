@@ -6,8 +6,8 @@ gem "rails", '2.3.11'
 gem "rake"
 gem "RedCloth", ">=4.2.2"
 
-#gem "searchlogic"#, :git => "git://github.com/binarylogic/searchlogic.git", :tag => 'v2.5.8'
-gem "will_paginate", '2.3.11'
+gem "searchlogic"#, :git => "git://github.com/binarylogic/searchlogic.git", :tag => 'v2.5.8'
+#gem "will_paginate", '2.3.11'
 
 group :development do
   gem "mysql"

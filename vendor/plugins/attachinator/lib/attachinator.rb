@@ -58,7 +58,7 @@ module Attachinator
         :include_add_new_field => "Add #{association.to_s.singularize}",
         :new_objects => 1,
         :wrapper_class => @object_name + "_#{association}_attributes_fields",
-        :js_lib => :prototype
+        :js_lib => :jquery
       }.merge(options)
 
       options[:new_objects].times { object.send(association).send(:build) }

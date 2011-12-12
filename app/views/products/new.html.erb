@@ -20,7 +20,7 @@
   </p>
   
   <p>
-      <%= f.label :price %> $<%= f.text_field :price %>
+      <%= f.label :price %> $<%= f.text_field :price %> (Do not use comma's to separate thousands of $)
     </p>
     
     <p>
@@ -47,8 +47,8 @@
             		<%= attachment_fields.file_field :data %>
             		<%= attachment_fields.label :front, 'Primary Photo' %>
             		<%= attachment_fields.check_box :front %> |
-            		<%= attachment_fields.label :_delete, 'Delete Photo' %>
-            		<%= attachment_fields.check_box :_delete  %>
+            		<%= attachment_fields.label :_destroy, 'Delete Photo' %>
+            		<%= attachment_fields.check_box :_destroy  %>
             	<%- end -%>
                 </p>
             </div>

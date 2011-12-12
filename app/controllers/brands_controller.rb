@@ -20,8 +20,9 @@ class BrandsController < ApplicationController
        @category = Category.find_by_url_name(params[:category_id])
        @brand = Brand.find(params[:id])
     
-       @search = Product.all(:conditions => {'brand_id' => @brand.id, 'category_id' => @category.id})
-       @products = @search.paginate(:page => params[:page], :per_page => 12)
+       @search = Product.find(:all, :conditions => ['brand_id = ? and  category_id = ?', @brand.id, @category.id],
+          :order=> params[:order] || 'price DESC')
+       @products = @search.paginate(:page => params[:page], :per_page => 12 )
             #.order(params[:order] || :descend_by_price)
           
           
