@@ -7,7 +7,9 @@
     <div id="interior_sub_head"><h5 id="sub_green_head"></h5></div>
 <div id="interior_pad">
 
-<table cellspacing="0" cellpadding="0">
+<div id="new_button_wrapper"><%= link_to ('New product', new_product_path, :class => "new_button") %></div>
+
+<table cellspacing="0" cellpadding="0" id="product_index_list">
   <tr>
     <th>Title</th>
     <th>Price</th>
@@ -21,7 +23,7 @@
   <tr class="<%= cycle("even","odd")%>">
     <td><%=h product.title %></td>
     <td>$<%=h product.price %></td>
-    <td><%= image_tag(product.front_photo.data.url(:tiny)) unless product.front_photo.nil? %></td>
+    <td class="product_index_img"><%= image_tag(product.front_photo.data.url(:tiny)) unless product.front_photo.nil? %></td>
     <td><%=h product.category.name unless product.category.nil? %></td>
     <td><%=h product.brand.name unless product.brand.nil? %></td>
    
@@ -33,7 +35,7 @@
 
 <br />
 
-<%= link_to 'New product', new_product_path %>
+
 </div>
 </div>
 <%= render :partial => 'shared/interior_footer' %>

@@ -207,10 +207,15 @@
 }
 #product_show_thumb p img{width:100px; height:75px;}
 
-										/* Product new/edit styles */
-										
+		
+								/* Product new/edit styles */
+#new_button_wrapper{padding-bottom:10px; }								
+.new_button{background:#ccc; border:1px solid #999; padding:4px;}									
+.product_index_list img{width:100px;}
+.product_index_img{width:190px !important;}
 #interior_pad form{}
-#interior_pad form input{border:1px solid #999;}
+#interior_pad form label{line-height:18px;}
+#interior_pad form input{border:1px solid #999; padding:3px; font-size:14px;}
 #interior_pad form fieldset{padding:15px; margin-bottom:20px;}
 
 									

@@ -44,19 +44,16 @@
 </fieldset>    
     
      <div id="add_photo">
-	     <p><%= f.label 'Add/Remove Photos:' %><br>
-		  <% f.attachment_fields_for :photos, :data, :new_objects => 1 do |attachment_fields| %>
-		  	<%= image_tag(attachment_fields.object.data(:tiny)) unless attachment_fields.object.new_record?%>
-
-		  	<%= attachment_fields.file_field :data if attachment_fields.object.new_record? %>
-		  	<%= attachment_fields.label :front, 'Primary Photo' %>
-		  	<%= attachment_fields.check_box :front %>
-		  	<% unless attachment_fields.object.new_record? %> |
-		  		<%= attachment_fields.label :_destroy, 'Delete Photo' %>
-		  		<%= attachment_fields.check_box :_destroy %>
-		  	<% end %>
-		  <%- end -%>
-		     </p>
+	          <p><%= f.label 'Add Photos:' %><br>
+	             <% f.attachment_fields_for :photos, :data, :new_objects => 1, :js_lib => :jquery do |attachment_fields| %>
+	              	<%#= attachment_fields.label :data, 'Photo' %>
+	            		<%#= attachment_fields.file_field :data %>
+	            		<%#= attachment_fields.label :front, 'Primary Photo' %>
+	            		<%#= attachment_fields.check_box :front %> |
+	            		<%#= attachment_fields.label :_destroy, 'Delete Photo' %>
+	            		<%#= attachment_fields.check_box :_destroy  %>
+	            	<%- end -%>
+	                </p>
 	 </div>
 
      <p><%= f.label :audioclip %><br>
