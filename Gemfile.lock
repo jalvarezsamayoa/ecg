@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/ctran/annotate_models.git
+  revision: a43c08f0eb4d69a48c6830630ebb60e35ccb2d2d
+  specs:
+    annotate (2.4.1.beta1)
+
+GIT
   remote: git://github.com/railsdog/searchlogic.git
   revision: dfe4a45f224aa84d5dcc1c1e28c598b08b7aee7a
   specs:
@@ -117,6 +123,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate!
   coffee-rails (~> 3.2.1)
   jquery-rails
   mysql2
