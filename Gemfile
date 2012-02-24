@@ -4,10 +4,11 @@ gem 'rails', '3.2.1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-gem 'will_paginate'
+gem 'will_paginate', '~> 3.0'
 gem "paperclip"
-#gem "searchlogic"
-gem 'rd_searchlogic', :require => 'searchlogic', :git => 'git://github.com/railsdog/searchlogic.git'
+#gem 'rd_searchlogic', :require => 'searchlogic', :git => 'git://github.com/railsdog/searchlogic.git'
+
+gem 'devise'
 
 gem 'mysql2'
 
@@ -28,6 +29,20 @@ gem 'jquery-rails'
 
 group :development do
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git', :require => false
+  gem 'pry'
+  gem 'pry-doc'
+
+  gem 'guard'
+  gem 'guard-livereload'
+  gem 'yajl-ruby'
+  gem 'rack-livereload'
+end
+
+group :development, :test do
+  gem 'faker'
+  gem 'factory_girl_rails'
+  gem "database_cleaner"
+  gem "steak"
 end
 
 # To use ActiveModel has_secure_password

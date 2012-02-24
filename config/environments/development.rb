@@ -34,14 +34,17 @@ Emeraldcg::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
-  
-  ActionMailer::Base.delivery_method = :sendmail
-   ActionMailer::Base.smtp_settings = {
-       :address => "mail.emeraldcityguitars.com",
-       :port => 587,
-       :domain => "emeraldcityguitars.com",
-       :authentication => :login,
-       :user_name => "jay@emeraldcityguitars.com",
-       :password => "Bulldog.72"
-     }
+
+
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  # ActionMailer::Base.delivery_method = :sendmail
+  #  ActionMailer::Base.smtp_settings = {
+  #      :address => "mail.emeraldcityguitars.com",
+  #      :port => 587,
+  #      :domain => "emeraldcityguitars.com",
+  #      :authentication => :login,
+  #      :user_name => "jay@emeraldcityguitars.com",
+  #      :password => "Bulldog.72"
+  #    }
 end

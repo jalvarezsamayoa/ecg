@@ -1,70 +1,45 @@
-require 'digest/sha1'
-
 class User < ActiveRecord::Base
-  include Authentication
-  include Authentication::ByPassword
-  include Authentication::ByCookieToken
-
-  validates_presence_of     :login
-  validates_length_of       :login,    :within => 3..40
-  validates_uniqueness_of   :login
-  validates_format_of       :login,    :with => Authentication.login_regex, :message => Authentication.bad_login_message
-
-  validates_format_of       :name,     :with => Authentication.name_regex,  :message => Authentication.bad_name_message, :allow_nil => true
-  validates_length_of       :name,     :maximum => 100
-
-  validates_presence_of     :email
-  validates_length_of       :email,    :within => 6..100 #r@a.wk
-  validates_uniqueness_of   :email
-  validates_format_of       :email,    :with => Authentication.email_regex, :message => Authentication.bad_email_message
-
+   # Include default devise modules. Others available are:
+  # :token_authenticatable, :encryptable, :confirmable, :lockable,
+  # :timeoutable and :omniauthable
   
-
-  # HACK HACK HACK -- how to do attr_accessible from here?
-  # prevents a user from submitting a crafted form that bypasses activation
-  # anything else you want your user to change should be added here.
-  attr_accessible :login, :email, :name, :password, :password_confirmation
-
-
-
-  # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
-  #
-  # uff.  this is really an authorization, not authentication routine.  
-  # We really need a Dispatch Chain here or something.
-  # This will also let us return a human error message.
-  #
-  def self.authenticate(login, password)
-    return nil if login.blank? || password.blank?
-    u = find_by_login(login.downcase) # need to get the salt
-    u && u.authenticated?(password) ? u : nil
-  end
-
-  def login=(value)
-    write_attribute :login, (value ? value.downcase : nil)
-  end
-
-  def email=(value)
-    write_attribute :email, (value ? value.downcase : nil)
-  end
-
-  protected
-    
-
-
+#  devise :database_authenticatable, :registerable,
+ #      :recoverable, :rememberable, :confirmable, :validatable
+  devise :database_authenticatable, :validatable
+  
+   # Setup accessible (or protected) attributes for your model
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name
+  
+  validates_length_of       :name,     :maximum => 100
+  
 end
 # == Schema Information
 #
 # Table name: users
 #
-#  id                        :integer(4)      not null, primary key
-#  login                     :string(40)
-#  name                      :string(100)     default("")
-#  email                     :string(100)
-#  crypted_password          :string(40)
-#  salt                      :string(40)
-#  created_at                :datetime
-#  updated_at                :datetime
-#  remember_token            :string(40)
-#  remember_token_expires_at :datetime
+#  id                     :integer(4)      not null, primary key
+#  login                  :string(40)
+#  name                   :string(100)     default("")
+#  email                  :string(100)
+#  encrypted_password     :string(128)     default(""), not null
+#  password_salt          :string(255)     default(""), not null
+#  created_at             :datetime
+#  updated_at             :datetime
+#  reset_password_token   :string(255)
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  sign_in_count          :integer(4)      default(0)
+#  current_sign_in_at     :datetime
+#  last_sign_in_at        :datetime
+#  current_sign_in_ip     :string(255)
+#  last_sign_in_ip        :string(255)
+#  confirmation_token     :string(255)
+#  confirmed_at           :datetime
+#  confirmation_sent_at   :datetime
+#  unconfirmed_email      :string(255)
+#  failed_attempts        :integer(4)      default(0)
+#  unlock_token           :string(255)
+#  locked_at              :datetime
+#  authentication_token   :string(255)
 #
 
