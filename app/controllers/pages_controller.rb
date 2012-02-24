@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
    before_filter :find_categories
-     before_filter :login_required, :only => [ :edit ]
+   before_filter :authenticate_user!, :only => [ :edit ]
   # GET /pages
   # GET /pages.xml
   #def index

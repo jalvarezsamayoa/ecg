@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
 
-  before_filter :login_required, :only => [ :index, :edit ]
+  before_filter :authenticate_user!, :only => [ :index, :edit ]
   before_filter :find_categories
 
   # GET /categories

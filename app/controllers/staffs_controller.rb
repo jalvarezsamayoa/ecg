@@ -1,6 +1,6 @@
 class StaffsController < ApplicationController
   before_filter :find_categories
-  before_filter :login_required, :only => [ :new, :edit, :show ]
+  before_filter :authenticate_user!, :only => [ :new, :edit, :show ]
   # GET /staffs
   # GET /staffs.xml
   def index

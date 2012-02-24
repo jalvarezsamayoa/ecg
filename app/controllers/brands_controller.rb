@@ -1,7 +1,7 @@
 class BrandsController < ApplicationController
 
    before_filter :find_categories
-   before_filter :login_required, :only => [ :index, :new, :edit ]
+   before_filter :authenticate_user!, :only => [ :index, :new, :edit ]
 
   # GET /brands
   # GET /brands.xml

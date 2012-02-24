@@ -1,6 +1,6 @@
 class LinksController < ApplicationController
   before_filter :find_categories
-  before_filter :login_required, :only => [:new, :edit ]
+  before_filter :authenticate_user!, :only => [:new, :edit ]
   # GET /links
   # GET /links.xml
   def index
