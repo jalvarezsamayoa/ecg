@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120224204438) do
+ActiveRecord::Schema.define(:version => 20120224215535) do
 
   create_table "banners", :force => true do |t|
     t.string   "name"
@@ -89,7 +89,10 @@ ActiveRecord::Schema.define(:version => 20120224204438) do
     t.string   "audioclip_content_type"
     t.integer  "audioclip_file_size"
     t.datetime "audioclip_updated_at"
+    t.string   "slug"
   end
+
+  add_index "products", ["slug"], :name => "index_products_on_slug"
 
   create_table "spotlights", :force => true do |t|
     t.string   "name"

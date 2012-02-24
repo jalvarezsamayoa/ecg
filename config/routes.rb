@@ -1,4 +1,7 @@
 Emeraldcg::Application.routes.draw do
+
+    devise_for :users
+  
     resources :links
 
     match '/logout' => 'sessions#destroy', :as => :logout

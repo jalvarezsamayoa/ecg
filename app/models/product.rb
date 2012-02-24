@@ -1,11 +1,13 @@
 class Product < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :title, :use => :slugged
+  
   #Relationships
   belongs_to :category
   belongs_to :brand
   has_one :spotlight
   
-  acts_as_friendly_param :title
-  
+
   has_many :photos
   has_one :front_photo, :class_name => 'Photo', :conditions => {:front => true}, :autosave => true
 

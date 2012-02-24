@@ -1,5 +1,5 @@
 class WishListController < ApplicationController
-   before_filter :find_categories
+  before_filter :find_categories
   def index
     @page = Page.find_by_name('wish_list')
      # render index.html.erb

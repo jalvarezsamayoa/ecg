@@ -7,6 +7,7 @@ gem 'rails', '3.2.1'
 gem 'will_paginate', '~> 3.0'
 gem "paperclip"
 #gem 'rd_searchlogic', :require => 'searchlogic', :git => 'git://github.com/railsdog/searchlogic.git'
+gem 'friendly_id'
 
 gem 'devise'
 
