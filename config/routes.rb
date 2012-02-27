@@ -31,10 +31,10 @@ Emeraldcg::Application.routes.draw do
 
   resources :users
 
-  devise_for :users
+  devise_for :users, :controllers => { :sessions => "users/sessions" }
   devise_scope :user do
-    get '/login' => 'devise/sessions#new'
-    get '/logout' => 'devise/sessions#destroy'
+    get '/login' => 'users/sessions#new'
+    get '/logout' => 'users/sessions#destroy'
   end
 
   # The priority is based upon order of creation:
