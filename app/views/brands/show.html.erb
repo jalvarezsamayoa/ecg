@@ -25,7 +25,7 @@
     <h5 id="sub_green_head"><%= @brand.name unless @brand.nil? %></h5>
 
 
-    <%- form_for [@category, @brand], :html => {:method => 'get', :id => 'sort_form', :class => 'sort_form'} do -%>
+    <%= form_for [@category, @brand], :html => {:method => 'get', :id => 'sort_form', :class => 'sort_form'} do -%>
     <label>Sort by: </label> <%= select_tag :order, product_sort_options %>
     <%= submit_tag 'Go' %>
 <%- end -%>
