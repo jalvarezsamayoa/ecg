@@ -1,7 +1,7 @@
 #interior_wrapper{
 	width:968px;
 	height:auto;
-	background-image:url(/images/interior_bg.png);
+	background-image:url(interior_bg.png);
 	background-repeat:repeat-y;
 	margin-right:auto;
 	margin-left:auto;
@@ -37,7 +37,7 @@
 
 #interior_header_absolute{
 	position:absolute;
-	background-image:url(/images/category_title_bg.png);
+	background-image:url(category_title_bg.png);
 	background-repeat:no-repeat;
 	width:346px;
 	height:79px;
@@ -102,7 +102,7 @@
 	display:block;
 }
 #brand_list{
-	background-image:url(/images/brand_nav_bg_2.jpg);
+	background-image:url(brand_nav_bg_2.jpg);
 	background-repeat:repeat-y;	
 	height:auto;
 	min-height:300px;
@@ -118,7 +118,7 @@
 	text-transform:uppercase;
 }
 #brands_listing_bottom{
-	background-image:url(/images/brands_nav_bg_bottom.jpg);
+	background-image:url(brands_nav_bg_bottom.jpg);
 	background-repeat:no-repeat;
 	height:70px;
 	width:190px;
@@ -155,7 +155,7 @@
 }
 
 .product_image{
-	background-image:url(/images/product_photo_frame.png);
+	background-image:url(product_photo_frame.png);
 	background-repeat:no-repeat;
 	width:167px;
 	height:132px;
@@ -265,10 +265,10 @@
 	padding:0;
 }
 .visitor_image_1 img, .visitor_image_2 img, .visitor_image_3 img{width:150px; height:114px;}
-.visitor_image_1{width:185px; height:146px; background-image:url(/images/visitor_frame_1.png); background-repeat:no-repeat; padding-top:14px;}
-.visitor_image_2{width:185px; height:146px; background-image:url(/images/visitor_frame_2.png); background-repeat:no-repeat; padding-top:14px;}
+.visitor_image_1{width:185px; height:146px; background-image:url(visitor_frame_1.png); background-repeat:no-repeat; padding-top:14px;}
+.visitor_image_2{width:185px; height:146px; background-image:url(visitor_frame_2.png); background-repeat:no-repeat; padding-top:14px;}
 
-.visitor_image_3{width:185px; height:146px; background-image:url(/images/visitor_frame_3.png); background-repeat:no-repeat; padding-top:14px;}
+.visitor_image_3{width:185px; height:146px; background-image:url(visitor_frame_3.png); background-repeat:no-repeat; padding-top:14px;}
 
 
 
@@ -290,7 +290,7 @@
 #interior_footer{
 	width:968px;
 	height:64px;
-	background-image:url(/images/interior_footer_bg.png);
+	background-image:url(interior_footer_bg.png);
 	background-repeat:no-repeat;
 	margin-right:auto;
 	margin-left:auto;

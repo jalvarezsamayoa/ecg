@@ -12,4 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require cycle
+//= require cufon
+//= require Rosewood_Std_400.font
+//= require supersleight-min
 //= require_tree .

@@ -1,0 +1,18 @@
+<%= javascript_include_tag "application" %>
+<%= csrf_meta_tags %>
+
+<!-- <% if @meta_title == "Home" %> -->
+<!--   <%= javascript_include_tag 'thickbox' %> -->
+<!-- <% else %> -->
+<!--   <%= javascript_include_tag 'shadowbox' %> -->
+<!-- <% end %> -->
+
+<script type="text/javascript">
+  Cufon.replace('h6#int_header');
+  Cufon.replace('h5#sub_green_head');
+  Cufon.replace('#one_product h1');
+  Cufon.replace('#main_nav li a');
+  Cufon.replace('.staff_name');
+</script>
+
+<%= yield :javascripts %>

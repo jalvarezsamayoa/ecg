@@ -1,88 +1,86 @@
-<% if @banner && @banner.switch %>
-<script type="text/javascript">
-    $(document).ready(function(){
-        tb_show(null,"/find_banner?height=430&width=400", "");
-    });
+<% content_for :javascripts do %>
+  <% if @banner && @banner.switch %>
+    <script type="text/javascript">
+      $(document).ready(function(){
+      tb_show(null,"/find_banner?height=430&width=400", "");
+      });
 
-</script>
-
+    </script>
+  <% end %>
 <% end %>
 
 
 
-
-
-
 <div id="main_image_container">
-        <div id="main_image"><%= image_tag "/images/main_image.png" %>
-            <div id="tell_us_absolute"><%= link_to image_tag('tell_us.png'), wish_list_path %></div>
-        </div><!-- end Main Image -->
-        
+  <div id="main_image"><%= image_tag "main_image.png" %>
+    <div id="tell_us_absolute"><%= link_to image_tag('tell_us.png'), wish_list_path %></div>
+  </div><!-- end Main Image -->
+
 </div><!-- End Main Image Container-->
 
 <div id="middle_blue">
-    <p id="inventory_nav_title">INVENTORY PAGES:</p>
+  <p id="inventory_nav_title">INVENTORY PAGES:</p>
 
-        <ul id="inventory_nav">
-            <% @categories.each do |category| %>
-                <li><%= link_to (category.name), category %></li>
-                <li>|</li>
-            <% end %>
-        </ul>
-    
+  <ul id="inventory_nav">
+    <% @categories.each do |category| %>
+      <li><%= link_to (category.name), category %></li>
+      <li>|</li>
+    <% end %>
+  </ul>
+
 </div><!-- End Middle Blue-->
 
 <div id="home_guts">
-    <div id="recent_shop"> 
-        <div id="who_shops_image">
-            <% for visitor in @visitors -%>
-                <%= link_to (image_tag visitor.photo.url(:original)), visitors_path  %>
-            <% end %>
-            <div id="who_shops_overlay">
-                <p>Who Shops at Emerald City Guitars?</p>
-            </div>
-        </div>
-    </div><!-- Image 258px x 198px -->
-    <!--[if IE]>
-        <style>
-        #vintage_image_title{bottom:3px}
-        #new_image_title{bottom:3px}
-        </style>
-    <![endif]-->
-    <div id="vintage_spotlight">
-        <% if @vintage_spotlight.blank? %>
-        
-        <% else %>
-        <div id="vintage_image">
-            <%= link_to (image_tag @vintage_spotlight.front_photo.data.url(:spotlight)), @vintage_spotlight %>
-            <div id="vintage_image_title"><%= link_to @vintage_spotlight.title, @vintage_spotlight, :class => 'spotlight_link' %></div>
-        <% end %>
+  <div id="recent_shop">
+    <div id="who_shops_image">
+      <% for visitor in @visitors -%>
+        <%= link_to (image_tag visitor.photo.url(:original)), visitors_path  %>
+      <% end %>
+      <div id="who_shops_overlay">
+        <p>Who Shops at Emerald City Guitars?</p>
+      </div>
     </div>
-            
-       
+  </div><!-- Image 258px x 198px -->
+  <!--[if IE]>
+  <style>
+    #vintage_image_title{bottom:3px}
+    #new_image_title{bottom:3px}
+  </style>
+  <![endif]-->
+  <div id="vintage_spotlight">
+    <% if @vintage_spotlight.blank? %>
+
+    <% else %>
+      <div id="vintage_image">
+        <%= link_to (image_tag @vintage_spotlight.front_photo.data.url(:spotlight)), @vintage_spotlight %>
+        <div id="vintage_image_title"><%= link_to @vintage_spotlight.title, @vintage_spotlight, :class => 'spotlight_link' %></div>
+    <% end %>
     </div>
-    
-    <div id="new_spotlight">
-            <% if @new_spotlight.blank? %>
-            
-            <% else %>
-            <div id="new_image">
-                <%= link_to (image_tag @new_spotlight.front_photo.data.url(:spotlight)), @new_spotlight %>
-                <div id="new_image_title"><%= link_to @new_spotlight.title, @new_spotlight %></div>
-            </div>
-            <% end %>
-    </div>
-    
-    <p id="clear">&nbsp;</p>
-    <p id="footer">&copy; EMERALD CITY GUITARS | <% if user_signed_in? %><%= link_to "Log Out", logout_path %> | <%= link_to "Admin", admin_path %>      
-        
-        <% else %><%= link_to "Login", login_path %> | <%= link_to "Site by Ravenna Interactive", "http://ravennainteractive.com" %> <% end %> <br>
-        83 S. Washington St. Pioneer Square, Seattle, WA 98104<br>Mon - Sat 10am - 6pm
-		<% if mobile_device? %>
-		   
-		<% else %>
-		    <%= link_to "Mobile Site", "/mobile.html", :mobile => 1 %>
-		<% end %>
-          </p>
+
+
+  </div>
+
+  <div id="new_spotlight">
+    <% if @new_spotlight.blank? %>
+
+    <% else %>
+      <div id="new_image">
+        <%= link_to (image_tag @new_spotlight.front_photo.data.url(:spotlight)), @new_spotlight %>
+        <div id="new_image_title"><%= link_to @new_spotlight.title, @new_spotlight %></div>
+      </div>
+    <% end %>
+  </div>
+
+  <p id="clear">&nbsp;</p>
+  <p id="footer">&copy; EMERALD CITY GUITARS | <% if user_signed_in? %><%= link_to "Log Out", logout_path %> | <%= link_to "Admin", admin_path %>
+
+    <% else %><%= link_to "Login", login_path %> | <%= link_to "Site by Ravenna Interactive", "http://ravennainteractive.com" %> <% end %> <br>
+    83 S. Washington St. Pioneer Square, Seattle, WA 98104<br>Mon - Sat 10am - 6pm
+    <% if mobile_device? %>
+
+    <% else %>
+      <%= link_to "Mobile Site", "/mobile.html", :mobile => 1 %>
+    <% end %>
+  </p>
 </div>
 
