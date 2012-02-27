@@ -16,13 +16,13 @@
            <span class="staff_link"><%= link_to staff.link, staff.link %></span><br>
            <span class="staff_bio"><%=h staff.bio %></span><td>
            
-       <p><% if logged_in? %> <%= link_to 'Edit', edit_staff_path(staff) %> | <%= link_to 'Destroy', staff, :confirm => 'Are you sure?', :method => :delete %> <% end %>
+       <p><% if user_signed_in? %> <%= link_to 'Edit', edit_staff_path(staff) %> | <%= link_to 'Destroy', staff, :confirm => 'Are you sure?', :method => :delete %> <% end %>
 		</p>
       </div>
 		<p class="staff_pad">&nbsp;</p>
     <% end %>
     <p>&nbsp;</p>
-    <p><% if logged_in? %><%= link_to 'New staff', new_staff_path %><% end %></p>
+    <p><% if user_signed_in? %><%= link_to 'New staff', new_staff_path %><% end %></p>
 </div>
     
     <%= render :partial => 'shared/about_menu' %>

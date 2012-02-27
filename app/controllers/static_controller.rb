@@ -11,22 +11,22 @@ class StaticController < ApplicationController
 
   end
   def history
-    @page = Page.find_by_name('history')
+    @page = PageDecorator.new(Page.find_by_name('history'))
     @meta_title = "Shop #{@page.name}"
   end
 
   def shop_info
-    @page = Page.find_by_name('shop_info')
+    @page = PageDecorator.new(Page.find_by_name('shop_info'))
     @meta_title = "Shop Info"
   end
 
   def about
-    @page = Page.find_by_name('about')
+    @page = PageDecorator.new(Page.find_by_name('about'))
     @meta_title = "About the Shop"
   end
 
   def repairs
-    @page = Page.find_by_name('repairs')
+    @page = PageDecorator.new(Page.find_by_name('repairs'))
     @meta_title = "Repairs"
   end
 

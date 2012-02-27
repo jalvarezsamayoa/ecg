@@ -17,7 +17,7 @@
     <td><%= link_to (image_tag (link.photo.url(:original), :align => 'left')), link.link_url unless link.photo.url.nil? %></td>
     <td><span class="staff_name"><%= link_to link.name, link.link_url %></span><br>
         <span class="staff_bio"><%=h link.description %></td>
-<% if logged_in? %> 
+<% if user_signed_in? %> 
    <td><%= link_to 'Edit', edit_link_path(link) %> | <%= link_to 'Destroy', link, :confirm => 'Are you sure?', :method => :delete %></td>
 <% end %>
     </td>
@@ -26,7 +26,7 @@
 </table>
 
 <br />
-<% if logged_in? %> 
+<% if user_signed_in? %> 
     <%= link_to 'New link', new_link_path %>
 <% end %>
 </div>

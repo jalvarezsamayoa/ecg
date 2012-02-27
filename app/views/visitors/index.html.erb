@@ -1,36 +1,36 @@
 <%= render :partial => 'shared/interior_hero' %>
 <div id="interior_wrapper">
-    <div id="interior_header_absolute">
-        <h6 id="int_header">Recent Guests</h6>
-    </div>
-    
-    <div id="interior_sub_head"></div>
+  <div id="interior_header_absolute">
+    <h6 id="int_header">Recent Guests</h6>
+  </div>
 
-<div id="visitor_listing">
-<% @visitors.each do |visitor| %>
-<div class="visitor">
-   
-    <p class="visitor_image_<%=cycle('1','2', '3')%>"><%= link_to(image_tag(visitor.photo.url(:visitor)), visitor.photo.url(:thickbox), :rel => "shadowbox", :title => visitor.second_caption) %></p>
+  <div id="interior_sub_head"></div>
 
-	<p><%=h truncate (visitor.caption, 40, "...")  %></p>
-    
-	<% if logged_in? %> 
-    <p><%= link_to 'Edit', edit_visitor_path(visitor) %> | <%= link_to 'Destroy', visitor, :confirm => 'Are you sure?', :method => :delete %>
-    </p><% end %>
-</div>
+  <div id="visitor_listing">
+    <% @visitors.each do |visitor| %>
+      <div class="visitor">
 
-<% end %>
+        <p class="visitor_image_<%=cycle('1','2', '3')%>"><%= link_to(image_tag(visitor.photo.url(:visitor)), visitor.photo.url(:thickbox), :rel => "shadowbox", :title => visitor.second_caption) %></p>
 
- <% if logged_in? %> 
- <p><%= link_to 'New Guest', new_visitor_path %></p>
- <% end %>
-</div>
+        <p><%=h truncate (visitor.caption, 40, "...")  %></p>
 
-<%= render :partial => 'shared/about_menu' %>
+        <% if user_signed_in? %>
+          <p><%= link_to 'Edit', edit_visitor_path(visitor) %> | <%= link_to 'Destroy', visitor, :confirm => 'Are you sure?', :method => :delete %>
+          </p><% end %>
+      </div>
+
+    <% end %>
+
+    <% if user_signed_in? %>
+      <p><%= link_to 'New Guest', new_visitor_path %></p>
+    <% end %>
+  </div>
+
+  <%= render :partial => 'shared/about_menu' %>
 
 
-<p id="clear"></p>
-      
+  <p id="clear"></p>
+
 </div>
 
 <%= render :partial => 'shared/interior_footer' %>

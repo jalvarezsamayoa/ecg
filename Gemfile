@@ -11,6 +11,7 @@ gem 'friendly_id'
 
 gem 'devise'
 gem 'draper'
+gem 'RedCloth'
 
 gem 'mysql2'
 
