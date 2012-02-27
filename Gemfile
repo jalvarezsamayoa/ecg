@@ -10,6 +10,7 @@ gem "paperclip"
 gem 'friendly_id'
 
 gem 'devise'
+gem 'draper'
 
 gem 'mysql2'
 
