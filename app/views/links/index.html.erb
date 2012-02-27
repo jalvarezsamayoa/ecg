@@ -1,35 +1,37 @@
 <%= render :partial => 'shared/interior_hero' %>
 <div id="interior_wrapper">
-    <div id="interior_header_absolute">
-        <h6 id="int_header">Links and Friends</h6>
-    </div>
-    
-    <div id="interior_sub_head"><h5 id="sub_green_head"></h5></div>
-    <div id="interior_pad">
-        
+  <div id="interior_header_absolute">
+    <h6 id="int_header">Links and Friends</h6>
+  </div>
+
+  <div id="interior_sub_head"><h5 id="sub_green_head"></h5></div>
+  <div id="interior_pad">
+
     <p id=""><%= @page.body %></p>
 
-<table id="links_table">
+    <table id="links_table">
 
 
-<% @links.each do |link| %>
-  <tr>
-    <td><%= link_to (image_tag (link.photo.url(:original), :align => 'left')), link.link_url unless link.photo.url.nil? %></td>
-    <td><span class="staff_name"><%= link_to link.name, link.link_url %></span><br>
-        <span class="staff_bio"><%=h link.description %></td>
-<% if user_signed_in? %> 
-   <td><%= link_to 'Edit', edit_link_path(link) %> | <%= link_to 'Destroy', link, :confirm => 'Are you sure?', :method => :delete %></td>
-<% end %>
-    </td>
-  </tr>
+      <% @links.each do |link| %>
+        <tr>
+          <td>
+            <%= link_to(   image_tag(link.photo.url(:original), :align => 'left') , link.link_url) unless link.photo.url.nil?  %>
+          </td>
+          <td><span class="staff_name"><%= link_to link.name, link.link_url %></span><br>
+            <span class="staff_bio"><%=h link.description %></td>
+          <% if user_signed_in? %>
+            <td><%= link_to 'Edit', edit_link_path(link) %> | <%= link_to 'Destroy', link, :confirm => 'Are you sure?', :method => :delete %></td>
+          <% end %>
+</td>
+</tr>
 <% end %>
 </table>
 
 <br />
-<% if user_signed_in? %> 
-    <%= link_to 'New link', new_link_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New link', new_link_path %>
 <% end %>
 </div>
 </div>
 
-   <%= render :partial => 'shared/interior_footer' %>
+<%= render :partial => 'shared/interior_footer' %>
