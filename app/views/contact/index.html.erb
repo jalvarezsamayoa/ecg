@@ -8,7 +8,7 @@
 
 
 <div id="contact_form">
-    <% form_tag :action => "send_mail" do %>
+    <%= form_tag :action => "send_mail" do %>
          <p>
            <%= label :email, :name, "Name:" %><br />
            <%= text_field :email, :name %>

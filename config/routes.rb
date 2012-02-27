@@ -1,46 +1,42 @@
 Emeraldcg::Application.routes.draw do
 
-    devise_for :users
-  
-    resources :links
+  resources :links
+  resources :staffs
+  resources :brands
+  resources :banners
+  resources :visitors
+  match 'visitors' => 'visitors#index', :as => :visitors
 
-    match '/logout' => 'sessions#destroy', :as => :logout
-    match '/login' => 'sessions#new', :as => :login
-    #  map.register '/register', :controller => 'users', :action => 'create'
-    #  map.signup '/signup', :controller => 'users', :action => 'new'
-    resources :users
-
-    resource :session
-
-    resources :staffs
-    resources :brands
-    resources :banners
-    resources :visitors
-    match 'visitors' => 'visitors#index', :as => :visitors
-
-    resources :pages
-    resources :products
-    resources :categories
-    resources :categories do 
-         resources :brands do  
-              resources :products  
-         end 
+  resources :pages
+  resources :products
+  resources :categories
+  resources :categories do
+    resources :brands do
+      resources :products
     end
+  end
 
 
-    match 'find_banner' => 'banners#find_banner', :as => :find_banner
-    match 'contact' => 'contact#index'
-    match 'wish_list' => 'wish_list#index', :as => :wish_list
+  match 'find_banner' => 'banners#find_banner', :as => :find_banner
+  match 'contact' => 'contact#index'
+  match 'wish_list' => 'wish_list#index', :as => :wish_list
 
 
-      match 'home' => 'static#home', :as => :home
-      match 'about' => 'static#about', :as => :about
-      match 'history' => 'static#history', :as => :history
-      match 'shop_info' => 'static#shop_info', :as => :shop_info
-      match 'repairs' => 'static#repairs', :as => :repairs
-      match 'admin' => 'static#admin', :as => :admin
-  
-  
+  match 'home' => 'static#home', :as => :home
+  match 'about' => 'static#about', :as => :about
+  match 'history' => 'static#history', :as => :history
+  match 'shop_info' => 'static#shop_info', :as => :shop_info
+  match 'repairs' => 'static#repairs', :as => :repairs
+  match 'admin' => 'static#admin', :as => :admin
+
+  resources :users
+
+  devise_for :users
+  devise_scope :user do
+    get '/login' => 'devise/sessions#new'
+    get '/logout' => 'devise/sessions#destroy'
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
