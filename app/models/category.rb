@@ -1,7 +1,9 @@
 class Category < ActiveRecord::Base
   has_many :brands, :through => :products, :uniq => true
   has_many :products
- # acts_as_friendly_param :name
+
+  extend FriendlyId
+  friendly_id :name, :use => :slugged
  
  validates_presence_of :url_name
  validates_uniqueness_of :url_name

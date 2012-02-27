@@ -1,7 +1,7 @@
 class BrandsController < ApplicationController
 
-   before_filter :find_categories
-   before_filter :authenticate_user!, :only => [ :index, :new, :edit ]
+  before_filter :find_categories
+  before_filter :authenticate_user!, :only => [ :index, :new, :edit ]
 
   # GET /brands
   # GET /brands.xml
@@ -17,17 +17,12 @@ class BrandsController < ApplicationController
   # GET /brands/1
   # GET /brands/1.xml
   def show
-       @category = Category.find_by_url_name(params[:category_id])
-       @brand = Brand.find(params[:id])
-    
-       @search = Product.find(:all, :conditions => ['brand_id = ? and  category_id = ?', @brand.id, @category.id],
-          :order=> params[:order] || 'price DESC')
-       @products = @search.paginate(:page => params[:page], :per_page => 12 )
-            #.order(params[:order] || :descend_by_price)
-          
-          
-         
-    
+    @category = Category.find_by_url_name(params[:category_id])
+    @brand = Brand.find(params[:id])
+
+    @search = Product.where("brand_id = ? and  category_id = ?", @brand.id, @category.id).order( params[:order] || 'price DESC')
+    @products = @search.paginate(:page => params[:page], :per_page => 12 )
+
     @meta_title = "#{@brand.name}"
     respond_to do |format|
       format.html # show.html.erb
@@ -87,14 +82,14 @@ class BrandsController < ApplicationController
 
   # DELETE /brands/1
   # DELETE /brands/1.xml
- # def destroy
+  # def destroy
   #  @brand = Brand.find(params[:id])
-   # @brand.destroy
+  # @brand.destroy
 
-    #respond_to do |format|
-     # format.html { redirect_to(brands_url) }
-      #format.xml  { head :ok }
+  #respond_to do |format|
+  # format.html { redirect_to(brands_url) }
+  #format.xml  { head :ok }
   #  end
   # end
- 
+
 end

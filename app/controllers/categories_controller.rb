@@ -17,19 +17,19 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.xml
   def show
-     @category = Category.find_by_url_name(params[:id])
-     @brands = @category.brands.find(:all, :order => "name")  
-     @categories = Category.find(:all)
-     @meta_title = "#{@category.name}"
+    @category = Category.find(params[:id])
+    @brands = @category.brands.find(:all, :order => "name")
+    @categories = Category.find(:all)
+    @meta_title = "#{@category.name}"
 
     respond_to do |format|
       format.html do |wants|
-              @brand = @brands.first   
-                @search = Product.all(:conditions => {'brand_id' => @brand.id, 'category_id' => @category.id})
-                 @products = @search.paginate(:page => params[:page], :per_page => 12)
-                      #.order(params[:order] || :descend_by_price)
-             
-              render :template => 'brands/show'
+        @brand = @brands.first
+        @search = Product.where("brand_id = ? and category_id = ?" , @brand.id, @category.id)
+        @products = @search.paginate(:page => params[:page], :per_page => 12)
+        #.order(params[:order] || :descend_by_price)
+
+        render :template => 'brands/show'
       end
       format.xml  { render :xml => @category }
     end
@@ -48,7 +48,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
-   @category = Category.find_by_url_name!(params[:id])
+    @category = Category.find_by_url_name!(params[:id])
   end
 
   # POST /categories
@@ -70,8 +70,8 @@ class CategoriesController < ApplicationController
 
   # PUT /categories/1
   # PUT /categories/1.xml
- def update
-   @category = Category.find_by_url_name!(params[:id])
+  def update
+    @category = Category.find_by_url_name!(params[:id])
 
     respond_to do |format|
       if @category.update_attributes(params[:category])
