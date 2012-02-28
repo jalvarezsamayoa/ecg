@@ -8,7 +8,12 @@ Emeraldcg::Application.routes.draw do
   match 'visitors' => 'visitors#index', :as => :visitors
 
   resources :pages
-  resources :products
+  resources :products do
+    member do
+      post :sort_photos
+    end
+  end
+    
   resources :categories
   resources :categories do
     resources :brands do

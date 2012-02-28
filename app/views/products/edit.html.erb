@@ -1,3 +1,40 @@
+<% content_for :javascripts do %>
+
+  <script>
+    $(function() {
+    $( "#add_photo" ).sortable();
+    $( "#add_photo" ).disableSelection();
+    });
+  </script>
+<% end %>
+
+<% content_for :javascripts do %>
+  <%= javascript_tag do %>
+    // Sorting the list
+
+    $(document).ready(function(){
+    $('#add_photo').sortable({
+      axis: 'y',
+      dropOnEmpty: false,      
+      cursor: 'crosshair',
+      items: 'div',
+      opacity: 0.4,
+      scroll: true,
+      update: function(){
+        $.ajax({
+          type: 'post',
+          data: $('#add_photo').sortable('serialize'),
+          dataType: 'script',
+          complete: function(request){
+            $('#add_photo').effect('highlight');
+          },
+          url: 'sort_photos'})
+       }
+      });
+    });
+  <% end %>
+<% end %>
+
 <%= render :partial => 'shared/interior_hero' %>
 <div id="interior_wrapper">
   <div id="interior_header_absolute">

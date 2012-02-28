@@ -16,6 +16,8 @@ gem 'RedCloth'
 #manage has_many forms via jquery
 gem "nested_form", :git => 'https://github.com/ryanb/nested_form.git'
 
+#manage image sorting
+gem "acts_as_list", :git => 'git://github.com/swanandp/acts_as_list.git'
 
 gem 'mysql2'
 

@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-   before_filter :find_categories
-   before_filter :authenticate_user!, :only => [ :index, :new, :edit ]
+  before_filter :find_categories
+  before_filter :authenticate_user!, :only => [ :index, :new, :edit ]
   # GET /products
   # GET /products.xml
   def index
@@ -29,7 +29,7 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
 
-   # @spotlight = Spotlight.find(:all)
+    # @spotlight = Spotlight.find(:all)
   end
 
   # GET /products/1/edit
@@ -42,37 +42,37 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(params[:product])
 
-   # respond_to do |format|
-       if @product.save
-          unless params[:spotlight] == "None"
-            spotlight = Spotlight.find_by_name(params[:spotlight])  # step 1
-            spotlight.product = @product                            # step 2
-            spotlight.save                                          # step 3
-          end
-          redirect_to product_url(@product)
-        else
-          render :action => :new
+    # respond_to do |format|
+    if @product.save
+      unless params[:spotlight] == "None"
+        spotlight = Spotlight.find_by_name(params[:spotlight])  # step 1
+        spotlight.product = @product                            # step 2
+        spotlight.save                                          # step 3
       end
+      redirect_to product_url(@product)
+    else
+      render :action => :new
     end
+  end
 
   # PUT /products/1
   # PUT /products/1.xml
   def update
     params[:photo_ids] ||= []
-        @product = Product.find(params[:id])
-        unless params[:photo_ids].empty?
-          Photo.destroy_pics(params[:id], params[:photo_ids])
-        end
-    
+    @product = Product.find(params[:id])
+    unless params[:photo_ids].empty?
+      Photo.destroy_pics(params[:id], params[:photo_ids])
+    end
+
     @product = Product.find(params[:id])
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
-          unless params[:spotlight] == "None"
-            spotlight = Spotlight.find_by_name(params[:spotlight])  # step 1
-            spotlight.product = @product                            # step 2
-            spotlight.save                                          # step 3
-          end
+        unless params[:spotlight] == "None"
+          spotlight = Spotlight.find_by_name(params[:spotlight])  # step 1
+          spotlight.product = @product                            # step 2
+          spotlight.save                                          # step 3
+        end
         flash[:notice] = 'Product was successfully updated.'
         format.html { redirect_to(products_url) }
         format.xml  { head :ok }
@@ -93,6 +93,17 @@ class ProductsController < ApplicationController
       format.html { redirect_to(products_url) }
       format.xml  { head :ok }
     end
+  end
+
+  def sort_photos
+    @product = Product.find(params[:id])
+    
+    @product.photos.each do |photo|
+      photo.position = params['photo'].index(photo.id.to_s) + 1
+      photo.save
+    end
+
+    render :nothing => true
   end
 end
 

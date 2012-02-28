@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120227213841) do
+ActiveRecord::Schema.define(:version => 20120228215302) do
 
   create_table "banners", :force => true do |t|
     t.string   "name"
@@ -74,8 +74,10 @@ ActiveRecord::Schema.define(:version => 20120227213841) do
     t.integer  "data_file_size"
     t.datetime "data_updated_at"
     t.boolean  "front"
+    t.integer  "position"
   end
 
+  add_index "photos", ["position"], :name => "index_photos_on_position"
   add_index "photos", ["product_id"], :name => "index_photos_on_product_id"
 
   create_table "products", :force => true do |t|

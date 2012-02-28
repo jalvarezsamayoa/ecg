@@ -8,7 +8,7 @@ class Product < ActiveRecord::Base
   has_one :spotlight
   
 
-  has_many :photos
+  has_many :photos, :order => "position"
   has_one :front_photo, :class_name => 'Photo', :conditions => {:front => true}, :autosave => true
 
   accepts_nested_attributes_for :photos, :allow_destroy => true, :reject_if => proc { |attributes| attributes["data"].blank? }
