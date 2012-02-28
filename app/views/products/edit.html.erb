@@ -1,69 +1,67 @@
 <%= render :partial => 'shared/interior_hero' %>
 <div id="interior_wrapper">
-    <div id="interior_header_absolute">
-        <h6 id="int_header">Edit</h6>
-    </div>
-    
-    <div id="interior_sub_head"><h5 id="sub_green_head"><%= @product.title %></h5></div>
-<div id="interior_pad">
+  <div id="interior_header_absolute">
+    <h6 id="int_header">Edit</h6>
+  </div>
 
-<%= form_for @product, :html => { :multipart => true } do |f| %>
-  <%= f.error_messages %>
+  <div id="interior_sub_head"><h5 id="sub_green_head"><%= @product.title %></h5></div>
+  <div id="interior_pad">
 
-<fieldset>
-	<legend>Basics</legend>
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-      <%= f.label :price %> $<%= f.text_field :price %>
-    </p>
-</fieldset>
+    <%= nested_form_for @product, :html => { :multipart => true } do |f| %>
+    <%= f.error_messages %>
 
-<fieldset>
-	<legend>Categories and Spotlights</legend>   
-    <p>
-    <%= f.label "Spotlight" %> 
-    <%= select_tag "spotlight", options_for_select([ "New", "Vintage", "None" ], "None")%>
-          
-    </p>
-    <p>
-         <%= f.label :category, "Category" %>
-         <%= f.select :category_id, Category.find(:all, :order => 'name').collect { |c| [c.name, c.id] }, :include_blank => true %>
-     </p>
+    <fieldset>
+      <legend>Basics</legend>
+      <p>
+        <%= f.label :title %><br />
+        <%= f.text_field :title %>
+      </p>
+      <p>
+        <%= f.label :description %><br />
+        <%= f.text_area :description %>
+      </p>
+      <p>
+        <%= f.label :price %> $<%= f.text_field :price %>
+      </p>
+    </fieldset>
 
-     <p>
-         <%= f.label :brand %>
-         <%= f.select :brand_id, Brand.find(:all, :order => 'name').collect { |b| [b.name, b.id] }, :include_blank => true %>
-     </p>
-</fieldset>    
-    
-     <div id="add_photo">
-	          <p><%= f.label 'Add Photos:' %><br>
-	             <% f.attachment_fields_for :photos, :data, :new_objects => 1, :js_lib => :jquery do |attachment_fields| %>
-	              	<%#= attachment_fields.label :data, 'Photo' %>
-	            		<%#= attachment_fields.file_field :data %>
-	            		<%#= attachment_fields.label :front, 'Primary Photo' %>
-	            		<%#= attachment_fields.check_box :front %> |
-	            		<%#= attachment_fields.label :_destroy, 'Delete Photo' %>
-	            		<%#= attachment_fields.check_box :_destroy  %>
-	            	<%- end -%>
-	                </p>
-	 </div>
+    <fieldset>
+      <legend>Categories and Spotlights</legend>
+      <p>
+        <%= f.label "Spotlight" %>
+        <%= select_tag "spotlight", options_for_select([ "New", "Vintage", "None" ], "None")%>
 
-     <p><%= f.label :audioclip %><br>
-         <%= f.file_field :audioclip %></p>
+      </p>
+      <p>
+        <%= f.label :category, "Category" %>
+        <%= f.select :category_id, Category.find(:all, :order => 'name').collect { |c| [c.name, c.id] }, :include_blank => true %>
+      </p>
 
-     <p><%= f.label :video %><br />
-          <%= f.text_area :video %></p>
-          
-  <p><%= f.submit 'Update' %></p>
-  
+      <p>
+        <%= f.label :brand %>
+        <%= f.select :brand_id, Brand.find(:all, :order => 'name').collect { |b| [b.name, b.id] }, :include_blank => true %>
+      </p>
+    </fieldset>
+
+
+    <fieldset>
+      <legend>Add Photos</legend>
+      <div id="add_photo">
+        <%= f.fields_for :photos do |f|%>
+          <%= render :partial => "photo_fields", :locals => {:f => f} %>
+        <% end %>
+      </div>
+      <p><%= f.link_to_add "Add a Photo", :photos %></p>
+    </fieldset>
+
+    <p><%= f.label :audioclip %><br>
+      <%= f.file_field :audioclip %></p>
+
+    <p><%= f.label :video %><br />
+      <%= f.text_area :video %></p>
+
+    <p><%= f.submit 'Update' %></p>
+
 <% end %>
 
 <%= link_to 'Show', @product %> |

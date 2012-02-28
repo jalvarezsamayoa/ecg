@@ -1,0 +1,13 @@
+<div class="photo">
+  <p>
+    <%= f.label :data, 'Photo' %> <br />
+    <%= f.file_field :data %>
+  </p>
+  <p>
+    <%= f.label :data, 'Current Image' %><br />
+    <%= image_tag f.object.data.url(:tiny) %>
+  </p>
+  <p>
+    <%= f.link_to_remove "Remove Photo" %>
+  </p>
+</div>

@@ -13,6 +13,10 @@ gem 'devise'
 gem 'draper'
 gem 'RedCloth'
 
+#manage has_many forms via jquery
+gem "nested_form", :git => 'https://github.com/ryanb/nested_form.git'
+
+
 gem 'mysql2'
 
 

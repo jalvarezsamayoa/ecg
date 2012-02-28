@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require nested_form
 //= require cycle
 //= require cufon
 //= require Rosewood_Std_400.font
