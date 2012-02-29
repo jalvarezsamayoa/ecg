@@ -158,26 +158,176 @@
     text-align: left; }
   #one_product #product_main_image {
     float: left; }
-  #one_product #product_main_text {
+  #one_product #product_info {
     float: left;
-    width: 520px;
-    font-size: 14px; }
-  #one_product #product_main_image img {
-    border: 1px solid #666;
-    padding: 2px; }
+    width: 420px; }
+    #one_product #product_info #product_main_text {
+      font-size: 14px; }
+    #one_product #product_info #product_main_image img {
+      border: 1px solid #666;
+      padding: 2px; }
+  #one_product #product_show_thumb {
+    width: 420px;
+    float: right; }
 
-#product_show_thumb {
-  width: 335px;
-  float: right; }
-  #product_show_thumb p {
+/*--------------------------------------------*/
+/* product slide show */
+/*--------------------------------------------*/
+#one_product {
+  /*if you just want to adjust the size of the stage and the thumbnails, you can do so by editing the following lines: */
+  /*if you change the padding on pika-stage you must adjust the top left of this to match! */
+  /*for the tool tips*/
+  /* jCarousel Styles */
+  /*if you're not using the carousel you can delete everything below this */ }
+  #one_product .pika-thumbs li {
+    width: 180px;
+    height: 150px; }
+  #one_product .pika-stage {
+    height: 350px; }
+  #one_product a {
+    color: white; }
+  #one_product .pikachoose {
+    width: 500px;
+    margin: 0 auto; }
+  #one_product .pika-stage {
+    position: relative;
+    border: 1px solid #010101;
+    -moz-box-shadow: 5px 5px 2px #888;
+    -webkit-box-shadow: 5px 5px 2px #888;
+    box-shadow: 5px 5px 2px #888; }
+  #one_product .pika-stage .main-image {
+    position: absolute;
+    top: 0px;
+    left: 0px; }
+  #one_product .pika-stage .pika-aniwrap {
+    position: absolute;
+    top: 0px;
+    left: 0px; }
+  #one_product .pika-stage .pika-ani {
+    position: relative;
+    display: none;
+    z-index: 2;
+    margin: 0 auto; }
+  #one_product .pika-stage img {
+    border: 0;
+    height: 350px;
+    width: 420px; }
+  #one_product .pika-stage .caption {
+    position: absolute;
+    background: url(75-black.png);
+    border: 1px solid #141414;
+    font-size: 11px;
+    color: #fafafa;
+    padding: 10px;
+    text-align: right;
+    bottom: 10px;
+    right: 10px; }
+  #one_product .pika-stage .caption p {
+    padding: 0;
+    margin: 0;
+    line-height: 14px; }
+  #one_product .pika-imgnav a {
+    position: absolute;
+    text-indent: -5000px;
+    display: block;
+    z-index: 3;
+    cursor: pointer; }
+  #one_product .pika-imgnav a.previous {
+    width: 20px;
+    height: 20px;
+    border-left: 5px solid #FFF;
+    border-top: 5px solid #FFF;
+    opacity: 0;
+    -webkit-transition: opacity 300ms linear;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 45%;
+    left: 10px; }
+  #one_product .pika-imgnav a.next {
+    width: 20px;
+    height: 20px;
+    border-right: 5px solid #FFF;
+    border-top: 5px solid #FFF;
+    opacity: 0;
+    -webkit-transition: opacity 300ms linear;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 45%;
+    right: 10px; }
+  #one_product .pika-imgnav a:hover {
+    opacity: .6;
+    -webkit-transition: opacity 300ms linear; }
+  #one_product .pika-imgnav a.play {
+    border-color: transparent transparent rgba(255, 255, 255, 0.7);
+    border-style: solid;
+    border-width: 0 0 25px 25px;
+    height: 0;
+    width: 0;
+    position: absolute;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 14px;
+    left: 47%;
+    display: none; }
+  #one_product .pika-imgnav a.pause {
+    display: none;
+    border-left: 5px solid rgba(255, 255, 255, 0.7);
+    border-right: 5px solid rgba(255, 255, 255, 0.8);
+    height: 30px;
+    width: 14px;
+    position: absolute;
+    top: 10px;
+    left: 47%; }
+  #one_product .pika-textnav {
+    display: none; }
+  #one_product .pika-thumbs {
+    margin: 10px 0 0 17px;
+    padding: 0; }
+  #one_product .pika-thumbs li {
     float: left;
-    width: 100px;
-    height: 75px;
-    padding-right: 5px;
-    border-bottom: none; }
-    #product_show_thumb p img {
-      width: 100px;
-      height: 75px; }
+    list-style-type: none;
+    margin: 0 5px 5px 5px;
+    border: 1px solid #000;
+    cursor: pointer;
+    -moz-box-shadow: 3px 3px 2px #888;
+    -webkit-box-shadow: 3px 3px 2px #888;
+    box-shadow: 3px 3px 2px #888; }
+  #one_product .pika-thumbs li:last {
+    margin: 0; }
+  #one_product .pika-thumbs li .clip {
+    position: relative;
+    height: 100%;
+    text-align: center;
+    vertical-align: center;
+    overflow: hidden; }
+  #one_product .pika-tooltip {
+    font-size: 12px;
+    position: absolute;
+    color: white;
+    padding: 3px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 3px solid black; }
+  #one_product .pika-counter {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    font-size: 11px;
+    padding: 3px;
+    -moz-border-radius: 5px;
+    border-radius: 5px; }
+  #one_product .jcarousel-skin-pika .jcarousel-container-horizontal {
+    padding: 15px 20px;
+    overflow: hidden; }
+  #one_product .jcarousel-skin-pika .jcarousel-clip-horizontal {
+    height: 90px;
+    width: 485px; }
+  #one_product .jcarousel-skin-pika .jcarousel-item-horizontal {
+    margin-right: 10px; }
 
 /* Product new/edit styles */
 #new_button_wrapper {

@@ -1,367 +1,441 @@
 #interior_wrapper {
-  width: 968px;
-  height: auto;
-  background-image: url(interior_bg.png);
-  background-repeat: repeat-y;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 25px 0 10px 0;
-  position: relative;
-  color: #333; }
+    width: 968px;
+    height: auto;
+    background-image: url(interior_bg.png);
+    background-repeat: repeat-y;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 25px 0 10px 0;
+    position: relative;
+    color: #333; }
 
 #errorExplanation {
-  color: #cc0000;
-  ul {
-    list-style-position: inside;
-    li {
-      padding-left: 20px; } } }
+    color: #cc0000;
+    ul {
+        list-style-position: inside;
+        li {
+            padding-left: 20px; } } }
 
 #interior_pad {
-  padding: 35px 50px 0 50px;
-  p {
-    padding-top: 10px; }
-  td {
-    padding: 5px 15px 5px 2px;
-    border-bottom: 1px solid #999; } }
+    padding: 35px 50px 0 50px;
+    p {
+        padding-top: 10px; }
+    td {
+        padding: 5px 15px 5px 2px;
+        border-bottom: 1px solid #999; } }
 
 #interior_header_absolute {
-  position: absolute;
-  background-image: url(category_title_bg.png);
-  background-repeat: no-repeat;
-  width: 346px;
-  height: 79px;
-  color: #fff;
-  left: -16px;
-  top: 13px; }
+    position: absolute;
+    background-image: url(category_title_bg.png);
+    background-repeat: no-repeat;
+    width: 346px;
+    height: 79px;
+    color: #fff;
+    left: -16px;
+    top: 13px; }
 
 #int_header {
-  text-align: right;
-  padding: 16px 60px 0 0;
-  font-size: 1.6em;
-  font-weight: bold; }
+    text-align: right;
+    padding: 16px 60px 0 0;
+    font-size: 1.6em;
+    font-weight: bold; }
 
 #interior_sub_head {
-  width: 630px;
-  height: 37px;
-  background-color: #7bbbac;
-  margin-left: 4px;
-  padding-left: 330px;
-  color: #fff;
-  #sub_green_head {
-    width: 200px;
-    font-size: 1.4em;
-    padding-top: 6px;
-    float: left; }
-  .pagination {
-    float: right;
-    padding-right: 30px;
-    padding-top: 8px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #000; }
-  #sort_form {
-    float: right;
-    width: 160px;
-    padding-right: 20px;
-    padding-top: 8px; } }
+    width: 630px;
+    height: 37px;
+    background-color: #7bbbac;
+    margin-left: 4px;
+    padding-left: 330px;
+    color: #fff;
+    #sub_green_head {
+        width: 200px;
+        font-size: 1.4em;
+        padding-top: 6px;
+        float: left; }
+    .pagination {
+        float: right;
+        padding-right: 30px;
+        padding-top: 8px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #000; }
+    #sort_form {
+        float: right;
+        width: 160px;
+        padding-right: 20px;
+        padding-top: 8px; } }
 
 #sort_form select {
-  width: 100px; }
+    width: 100px; }
 
 .pagination {
-  a {
-    color: #000;
-    &:hover {
-      color: #000; } }
-  .current {
-    text-decoration: underline; } }
+    a {
+        color: #000;
+        &:hover {
+            color: #000; } }
+    .current {
+        text-decoration: underline; } }
 
 #interior_sub_head p {
-  color: #fff;
-  font-size: 18px; }
+    color: #fff;
+    font-size: 18px; }
 
 /* Brands Styles */
 
 #brands_nav_container {
-  width: 190px;
-  height: auto;
-  margin-left: 4px;
-  display: block; }
+    width: 190px;
+    height: auto;
+    margin-left: 4px;
+    display: block; }
 
 #brand_list {
-  background-image: url(brand_nav_bg_2.jpg);
-  background-repeat: repeat-y;
-  height: auto;
-  min-height: 300px;
-  width: 190px;
-  padding-top: 30px;
-  ul {
-    list-style-type: none;
-    li {
-      padding: 4px 0 4px 40px;
-      font-size: 13px;
-      text-transform: uppercase; } } }
+    background-image: url(brand_nav_bg_2.jpg);
+    background-repeat: repeat-y;
+    height: auto;
+    min-height: 300px;
+    width: 190px;
+    padding-top: 30px;
+    ul {
+        list-style-type: none;
+        li {
+            padding: 4px 0 4px 40px;
+            font-size: 13px;
+            text-transform: uppercase; } } }
 
 #brands_listing_bottom {
-  background-image: url(brands_nav_bg_bottom.jpg);
-  background-repeat: no-repeat;
-  height: 70px;
-  width: 190px; }
+    background-image: url(brands_nav_bg_bottom.jpg);
+    background-repeat: no-repeat;
+    height: 70px;
+    width: 190px; }
 
 /* Product listing Styles */
 
 #product_listing_container {
-  float: right;
-  width: 770px;
-  margin-right: 4px;
-  height: auto;
-  p {
-    height: 100%; } }
+    float: right;
+    width: 770px;
+    margin-right: 4px;
+    height: auto;
+    p {
+        height: 100%; } }
 
 #product_listing {
-  width: 770px;
-  .blue {
     width: 770px;
-    background-color: #bdddd5; }
-  .white {
-    width: 770px;
-    background-color: #fff; } }
+    .blue {
+        width: 770px;
+        background-color: #bdddd5; }
+    .white {
+        width: 770px;
+        background-color: #fff; } }
 
 #spacer {
-  padding-top: 20px; }
+    padding-top: 20px; }
 
 .product {
-  width: 180px;
-  height: 230px;
-  font-size: 12px;
-  padding-top: 30px;
-  margin-left: 50px; }
+    width: 180px;
+    height: 230px;
+    font-size: 12px;
+    padding-top: 30px;
+    margin-left: 50px; }
 
 .product_image {
-  background-image: url(product_photo_frame.png);
-  background-repeat: no-repeat;
-  width: 167px;
-  height: 132px;
-  img {
-    margin: -1px 0 0 13px;
-    border: 1px solid #999; } }
+    background-image: url(product_photo_frame.png);
+    background-repeat: no-repeat;
+    width: 167px;
+    height: 132px;
+    img {
+        margin: -1px 0 0 13px;
+        border: 1px solid #999; } }
 
 .product_info {
-  padding-top: 20px;
-  padding-bottom: 30px; }
+    padding-top: 20px;
+    padding-bottom: 30px; }
 
 .even {}
 
 .odd {
-  background-color: #ccc; }
+    background-color: #ccc; }
 
 /* Product #show styles */
 
 #one_product {
-  font-size: 14px;
-  line-height: 18px;
-  img {
-    text-align: left; }
-  #product_main_image {
-    float: left; }
-  #product_main_text {
-    float: left;
-    width: 520px;
-    font-size: 14px; }
-  #product_main_image img {
-    border: 1px solid #666;
-    padding: 2px; } }
-
-#product_show_thumb {
-  width: 335px;
-  float: right;
-  p {
-    float: left;
-    width: 100px;
-    height: 75px;
-    padding-right: 5px;
-    border-bottom: none;
+    font-size: 14px;
+    line-height: 18px;
     img {
-      width: 100px;
-      height: 75px; } } }
+        text-align: left; }
+    #product_main_image {
+        float: left; }
+
+    #product_info {
+        float: left;
+        width: 420px;
+
+        #product_main_text {
+            font-size: 14px;
+
+        }
+        #product_main_image img {
+            border: 1px solid #666;
+            padding: 2px; }
+
+    }
+
+    #product_show_thumb {
+        width: 420px;
+        float: right;
+       }
+
+}
+
+
+/*--------------------------------------------*/
+/* product slide show */
+/*--------------------------------------------*/
+
+#one_product {
+    /*if you just want to adjust the size of the stage and the thumbnails, you can do so by editing the following lines: */
+    .pika-thumbs li{width: 180px; 
+                    height:150px; }
+    .pika-stage {height: 350px;}
+
+
+    a{color:white;}
+    .pikachoose {width: 500px; margin: 0 auto;}
+    .pika-stage {position: relative;
+                 border: 1px solid #010101;
+                 -moz-box-shadow: 5px 5px 2px #888;
+                 -webkit-box-shadow: 5px 5px 2px #888;
+                 box-shadow: 5px 5px 2px #888;}
+
+    /*if you change the padding on pika-stage you must adjust the top left of this to match! */
+    .pika-stage .main-image {position: absolute; top: 0px; left: 0px;}
+    .pika-stage .pika-aniwrap{position: absolute; top: 0px; left: 0px;}
+    .pika-stage .pika-ani {position:relative;display: none;z-index:2;margin:0 auto;}
+    .pika-stage img {border:0;height:350px; width: 420px; }
+
+    .pika-stage .caption {position: absolute; background: url(75-black.png);  border: 1px solid #141414; font-size: 11px;
+                          color: #fafafa; padding: 10px; text-align: right; bottom: 10px; right: 10px;}
+    .pika-stage .caption p {padding: 0; margin: 0; line-height: 14px;}
+
+    .pika-imgnav a {position: absolute; text-indent: -5000px; display: block;z-index:3;cursor:pointer;}
+    .pika-imgnav a.previous {width:20px;height:20px;border-left: 5px solid #FFF;border-top: 5px solid #FFF;opacity:0;-webkit-transition: opacity 300ms linear;
+                             -webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);transform: rotate(-45deg);top:45%;left:10px;}
+    .pika-imgnav a.next {width:20px;height:20px;border-right: 5px solid #FFF;border-top: 5px solid #FFF;opacity:0;-webkit-transition: opacity 300ms linear;
+                         -webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);transform: rotate(45deg);top:45%;right:10px;}
+    .pika-imgnav a:hover{opacity:.6;-webkit-transition: opacity 300ms linear;}
+
+    .pika-imgnav a.play  {border-color: transparent transparent rgba(255,255,255,.7);border-style: solid;border-width: 0 0 25px 25px;height: 0;width: 0;position:absolute;
+                          -webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);transform: rotate(-45deg);top:14px;left:47%;display:none;}
+    .pika-imgnav a.pause {display:none;border-left:5px solid rgba(255,255,255,.7);border-right:5px solid rgba(255,255,255,.8);height: 30px;width: 14px; position:absolute;top:10px;left:47%;}
+
+    .pika-textnav {display:none;}
+
+    .pika-thumbs {margin: 10px 0 0 17px; padding: 0;}
+    .pika-thumbs li {float: left; 
+                     list-style-type: none;
+                     margin: 0 5px 5px 5px; 
+                     border: 1px solid #000; 
+                     cursor: pointer;
+                     -moz-box-shadow: 3px 3px 2px #888;
+                     -webkit-box-shadow: 3px 3px 2px #888;
+                     box-shadow: 3px 3px 2px #888;}
+
+    .pika-thumbs li:last {margin: 0;}
+    .pika-thumbs li .clip {position:relative;height:100%;text-align: center; vertical-align: center; overflow: hidden;}
+
+    /*for the tool tips*/
+    .pika-tooltip{font-size:12px;position:absolute;color:white;padding:3px; background-color: rgba(0,0,0,0.7);border:3px solid black;}
+    .pika-counter{position: absolute;bottom: 15px;left:15px;color:white;background:rgba(0,0,0,0.7);font-size:11px;padding:3px;-moz-border-radius: 5px;border-radius:5px;}
+
+
+    /* jCarousel Styles */
+    /*if you're not using the carousel you can delete everything below this */
+    .jcarousel-skin-pika .jcarousel-container-horizontal { padding: 15px 20px; overflow:hidden;}
+    .jcarousel-skin-pika .jcarousel-clip-horizontal {height: 90px; width: 485px;}
+    .jcarousel-skin-pika .jcarousel-item-horizontal { margin-right: 10px;}
+
+}
+
+
+
+
 
 /* Product new/edit styles */
 
 #new_button_wrapper {
-  padding-bottom: 10px; }
+    padding-bottom: 10px; }
 
 .new_button {
-  background: #ccc;
-  border: 1px solid #999;
-  padding: 4px; }
+    background: #ccc;
+    border: 1px solid #999;
+    padding: 4px; }
 
 .product_index_list img {
-  width: 100px; }
+    width: 100px; }
 
 .product_index_img {
-  width: 190px !important; }
+    width: 190px !important; }
 
 #interior_pad form {
-  label {
-    line-height: 18px; }
-  input {
-    border: 1px solid #999;
-    padding: 3px;
-    font-size: 14px; }
-  fieldset {
-    padding: 15px;
-    margin-bottom: 20px; } }
+    label {
+        line-height: 18px; }
+    input {
+        border: 1px solid #999;
+        padding: 3px;
+        font-size: 14px; }
+    fieldset {
+        padding: 15px;
+        margin-bottom: 20px; } }
 
 /* Staff Styles */
 
 .staff {
-  padding: 0 0 10px 10px;
-  width: 650px; }
+    padding: 0 0 10px 10px;
+    width: 650px; }
 
 #product_listing_container .staff p {
-  padding: 10px 0 0 0;
-  width: 100%; }
+    padding: 10px 0 0 0;
+    width: 100%; }
 
 .staff img {
-  padding: 2px;
-  border: 1px solid #777;
-  margin: 0 10px 0px 0; }
+    padding: 2px;
+    border: 1px solid #777;
+    margin: 0 10px 0px 0; }
 
 .staff_name {
-  font-size: 1.2em;
-  font-weight: bold; }
+    font-size: 1.2em;
+    font-weight: bold; }
 
 .staff_link, .staff_bio {
-  font-size: 12px; }
+    font-size: 12px; }
 
 /* About Styles */
 
 #product_listing_container p {
-  padding: 30px 50px 10px 50px; }
+    padding: 30px 50px 10px 50px; }
 
 #about_content ul {
-  padding-left: 30px; }
+    padding-left: 30px; }
 
 /* Contact Form Styles */
 
 #contact_form {
-  padding: 35px 50px 0 50px; }
+    padding: 35px 50px 0 50px; }
 
 /* Visitor Styles */
 
 #visitor_listing {
-  float: right;
-  width: 770px;
-  margin-right: 4px;
-  height: auto;
-  padding-top: 30px; }
+    float: right;
+    width: 770px;
+    margin-right: 4px;
+    height: auto;
+    padding-top: 30px; }
 
 .visitor {
-  float: left;
-  text-align: center;
-  width: 185px;
-  height: 200px;
-  margin: 0 2px;
-  padding: 0; }
+    float: left;
+    text-align: center;
+    width: 185px;
+    height: 200px;
+    margin: 0 2px;
+    padding: 0; }
 
 .visitor_image_1 img, .visitor_image_2 img, .visitor_image_3 img {
-  width: 150px;
-  height: 114px; }
+    width: 150px;
+    height: 114px; }
 
 .visitor_image_1 {
-  width: 185px;
-  height: 146px;
-  background-image: url(visitor_frame_1.png);
-  background-repeat: no-repeat;
-  padding-top: 14px; }
+    width: 185px;
+    height: 146px;
+    background-image: url(visitor_frame_1.png);
+    background-repeat: no-repeat;
+    padding-top: 14px; }
 
 .visitor_image_2 {
-  width: 185px;
-  height: 146px;
-  background-image: url(visitor_frame_2.png);
-  background-repeat: no-repeat;
-  padding-top: 14px; }
+    width: 185px;
+    height: 146px;
+    background-image: url(visitor_frame_2.png);
+    background-repeat: no-repeat;
+    padding-top: 14px; }
 
 .visitor_image_3 {
-  width: 185px;
-  height: 146px;
-  background-image: url(visitor_frame_3.png);
-  background-repeat: no-repeat;
-  padding-top: 14px; }
+    width: 185px;
+    height: 146px;
+    background-image: url(visitor_frame_3.png);
+    background-repeat: no-repeat;
+    padding-top: 14px; }
 
 #contact_form p {
-  font-size: 12px;
-  padding: 5px; }
+    font-size: 12px;
+    padding: 5px; }
 
 /* Interior Styles */
 
 #interior_right {
-  float: right;
-  width: 400px;
-  padding-top: 30px;
-  font-size: 12px; }
+    float: right;
+    width: 400px;
+    padding-top: 30px;
+    font-size: 12px; }
 
 /* Interior Footer Styles */
 
 #interior_footer {
-  width: 968px;
-  height: 64px;
-  background-image: url(interior_footer_bg.png);
-  background-repeat: no-repeat;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 15px;
-  clear: both;
-  p {
-    float: right;
-    padding-right: 35px;
-    padding-top: 40px;
-    font-size: 11px; } }
+    width: 968px;
+    height: 64px;
+    background-image: url(interior_footer_bg.png);
+    background-repeat: no-repeat;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 15px;
+    clear: both;
+    p {
+        float: right;
+        padding-right: 35px;
+        padding-top: 40px;
+        font-size: 11px; } }
 
 /* Interior Admin Styles */
 
 #interior_form {
-  margin-top: 65px;
-  p {
-    padding-bottom: 10px; } }
+    margin-top: 65px;
+    p {
+        padding-bottom: 10px; } }
 
 #pages_edit {
-  border: 1px solid #999;
-  padding: 5px;
-  padding-left: 20px;
-  width: 180px; }
+    border: 1px solid #999;
+    padding: 5px;
+    padding-left: 20px;
+    width: 180px; }
 
 #other_edit {
-  margin-top: 15px; }
+    margin-top: 15px; }
 
 #admin_list {
-  list-style-type: none;
-  li {
-    padding: 3px 0 3px 3px;
-    margin: 3px 0 3px 0;
-    border: 1px solid #999;
-    background: #ccc;
-    width: 200px; } }
+    list-style-type: none;
+    li {
+        padding: 3px 0 3px 3px;
+        margin: 3px 0 3px 0;
+        border: 1px solid #999;
+        background: #ccc;
+        width: 200px; } }
 
 /* Links Style */
 
 #links_table {
-  td {
-    img {
-      padding: 2px;
-      border: 1px solid #999;
-      margin-right: 10px; }
-    border: none; }
-  tr {
-    border-bottom: 1px solid #999; } }
+    td {
+        img {
+            padding: 2px;
+            border: 1px solid #999;
+            margin-right: 10px; }
+        border: none; }
+    tr {
+        border-bottom: 1px solid #999; } }
 
 /*--------------------------------------------*/
 /* Product - Edit */
 /*--------------------------------------------*/
 
 #add_photo, .fields {
-    
-    .photo {        
+
+    .photo {
         width: 100%;
         margin-bottom: 10px;
         border: 1px solid #999;

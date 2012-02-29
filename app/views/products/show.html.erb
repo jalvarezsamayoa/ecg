@@ -1,42 +1,58 @@
 <%= render :partial => 'shared/interior_hero' %>
 <% content_for :head do %>
-	<meta property="og:title" content="<%=h @product.title %>"/>
-	<meta property="og:type" content="Product"/>
-	<meta property="og:url" content="http://emeraldcityguitars.com/products/<%= @product.id%>-<%= @product.title.gsub(" ", "-")
-	 %>" />
-	<meta property="og:image" content="http://emeraldcityguitars.com<%= @product.front_photo.data.url(:original) %>"/>
+  <meta property="og:title" content="<%=h @product.title %>"/>
+  <meta property="og:type" content="Product"/>
+  <meta property="og:url" content="http://emeraldcityguitars.com/products/<%= @product.id%>-<%= @product.title.gsub(" ", "-")
+                                                                                                                            %>" />
+  <meta property="og:image" content="http://emeraldcityguitars.com<%= @product.front_photo.data.url(:original) %>"/>
+<% end %>
+
+<% content_for :javascripts do %>
+
+  <script src="http://connect.facebook.net/en_US/all.js"></script>
+  <script>
+    FB.init({
+    status : true, // check login status
+    cookie : true, // enable cookies to allow the server to access the session
+    xfbml  : true  // parse XFBML
+    });
+  </script>
+
+
+  <%= javascript_tag do %>
+    // Load the product slide show
+     $(document).ready(function(){
+       $("#product-slide-show").PikaChoose();
+    });
+  <% end %>
+
 <% end %>
 
 
 
 <div id="interior_wrapper">
-    <div id="interior_header_absolute">
-        <h6 id="int_header"><%= @product.category.name %></h6>
-    </div>
-    
-    <div id="interior_sub_head"><h5 id="sub_green_head"><%= @product.brand.name %></h5></div>
-    
-    <div id="cb_header_bg"></div>
-<div id="interior_pad">
-    
+  <div id="interior_header_absolute">
+    <h6 id="int_header"><%= @product.category.name %></h6>
+  </div>
+
+  <div id="interior_sub_head"><h5 id="sub_green_head"><%= @product.brand.name %></h5></div>
+
+  <div id="cb_header_bg"></div>
+  <div id="interior_pad">
+
     <div id="one_product">
-		<h1><%= @product.brand.name %> <%=h @product.title %></h1>
-		
-		
-		<div id="product_show_thumb">
-			<% for photo in @product.photos %>
-<p><%= link_to image_tag(photo.data.url(:catalog)), photo.data.url(:original), :rel => "shadowbox[gallery]" %></p>
-			<% end %>
-		</div>
-	
-       
+      <h1><%= @product.brand.name %> <%=h @product.title %></h1>
+
+
+
+      <div id="product_info">
         <p id="product_main_text"><b>$<%= @product.price %></b><br>
-        <%= @product.description %></p>
-        
-		
-		<p><fb:like href="http://emeraldcityguitars.com/products/<%= @product.id%>-<%= @product.title %>" layout="standard" show_faces="true" width="400" action="like" font="segoe ui" colorscheme="light" /></p>
-		
-        
+          <%= @product.description %></p>
+
+
+        <p><fb:like href="http://emeraldcityguitars.com/products/<%= @product.id%>-<%= @product.title %>" layout="standard" show_faces="true" width="400" action="like" font="segoe ui" colorscheme="light" /></p>
+
+
         <p class="clear">
           Audio Clip:
           <% if @product.audioclip_file_name.nil? -%>
@@ -45,21 +61,24 @@
             <%= link_to 'Listen', @product.audioclip.url -%>
           <% end -%>
         </p>
-       
-            
-        <p><%= @product.video unless @product.nil? %></p>
 
-        </div><!-- End One Product-->
-		<p class="clear"></p>
-	</div><!-- End Interior Pad -->
+
+        <p><%= @product.video unless @product.nil? %></p>
+      </div>
+
+
+      <div id="product_show_thumb">
+        <ul id="product-slide-show">
+          <% @product.photos.order("position asc").each do |photo| %>
+            <li><%= link_to image_tag(photo.data.url(:spotlight)), photo.data.url(:original), :rel => "shadowbox[gallery]" %></li>
+          <% end %>
+        </ul>
+      </div>
+
+
+    </div><!-- End One Product-->
+    <p class="clear"></p>
+  </div><!-- End Interior Pad -->
 </div><!-- End Interior Wrapper-->
-<script src="http://connect.facebook.net/en_US/all.js"></script>
-<script>
-  FB.init({
-    status : true, // check login status
-    cookie : true, // enable cookies to allow the server to access the session
-    xfbml  : true  // parse XFBML
-  });
-</script>
 
 <%= render :partial => 'shared/interior_footer' %>
