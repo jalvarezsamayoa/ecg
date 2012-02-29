@@ -1,35 +1,86 @@
+<% content_for :javascripts do %>
+
+  <script>
+    $(function() {
+    $( "#brands" ).sortable();
+    $( "#brands" ).disableSelection();
+    });
+  </script>
+
+<% end %>
+
+<% content_for :javascripts do %>
+  <%= javascript_tag do %>
+    // Sorting the list
+
+    $(document).ready(function(){
+    $('#brands').sortable({
+      axis: 'y',
+      dropOnEmpty: false,      
+      cursor: 'crosshair',
+      items: 'li',
+      opacity: 0.4,
+      scroll: true,
+      update: function(){
+        $.ajax({
+          type: 'post',
+          data: $('#brands').sortable('serialize'),
+          dataType: 'script',
+          complete: function(request){
+            $('#brands').effect('highlight');
+          },
+          url: 'sort_brands'})
+       }
+      });
+    });
+  <% end %>
+<% end %>
+
 
 <%= render :partial => 'shared/interior_hero' %>
 
 <div id="interior_wrapper">
-    <div id="interior_header_absolute">
-        <p id="int_header">Edit a Category</p>
-    </div>
-    
-    <div id="interior_sub_head"></div>
-    
- <div id="interior_pad">
+  <div id="interior_header_absolute">
+    <p id="int_header">Edit a Category</p>
+  </div>
+
+  <div id="interior_sub_head"></div>
+
+  <div id="interior_pad">
 
 
-<%= form_for(@category) do |f| %>
-  <%= f.error_messages %>
+    <%= form_for(@category) do |f| %>
+      <%= f.error_messages %>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-      <%= f.label :url_name %><br>
-      <%= f.text_field :url_name %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
+      <fieldset>
+        <legend>Category</legend>
+        <p>
+          <%= f.label :name %><br />
+          <%= f.text_field :name %>
+        </p>
+        <p>
+          <%= f.label :url_name %><br>
+          <%= f.text_field :url_name %>
+        </p>
+        <p>
+          <%= f.submit 'Update' %>
+        </p>
+      </fieldset>
 
-<%= link_to 'Show', @category %> |
-<%= link_to 'Back', categories_path %>
-</div>
+      <fieldset>
+        <legend>Brands</legend>
+        <ul id="brands">
+          <%= f.fields_for :category_brands do |f| %>
+            <%= content_tag(:li, f.object.brand.name, :id => "category_brand_#{f.object.id}") %>
+          <% end %>
+        </ul>
+      </fieldset>
+
+    <% end %>
+
+    <%= link_to 'Show', @category %> |
+    <%= link_to 'Back', categories_path %>
+  </div>
 </div>
 <%= render :partial => 'shared/interior_footer' %>
 

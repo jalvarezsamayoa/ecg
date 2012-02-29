@@ -496,3 +496,16 @@
   margin-bottom: 10px;
   border: 1px solid #999;
   padding: 10px; }
+
+/*--------------------------------------------*/
+/* Category - Edit */
+/*--------------------------------------------*/
+.edit_category #brands {
+  list-style-type: none; }
+  .edit_category #brands li {
+    padding: 3px 0 3px 30px;
+    margin: 3px 0 3px 0;
+    border: 1px solid #999;
+    background-image: url(stack.png);
+    background-repeat: no-repeat;
+    background-position: 2px 5px; }

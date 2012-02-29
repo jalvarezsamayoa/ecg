@@ -1,6 +1,9 @@
 class Category < ActiveRecord::Base
   has_many :brands, :through => :products, :uniq => true
   has_many :products
+  
+  has_many :category_brands, :order => "position", :dependent => :destroy
+  accepts_nested_attributes_for :category_brands, :allow_destroy => true
 
   extend FriendlyId
   friendly_id :name, :use => :slugged

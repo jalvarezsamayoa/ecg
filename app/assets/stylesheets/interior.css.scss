@@ -442,3 +442,23 @@
         padding: 10px;
     }
 }
+
+/*--------------------------------------------*/
+/* Category - Edit */
+/*--------------------------------------------*/
+
+.edit_category {
+    #brands {
+        list-style-type: none;
+
+        li {
+            padding: 3px 0 3px 30px;
+            margin: 3px 0 3px 0;
+            border: 1px solid #999;
+            background-image: url(stack.png);
+            background-repeat: no-repeat;
+            background-position: 2px 5px;
+        }
+    }
+}
+

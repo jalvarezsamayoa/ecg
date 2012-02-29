@@ -1,7 +1,7 @@
 <div id="brand_list">
-	<ul>
-	<%- brand_list.brands.sort.each do |brand| -%>
-		<li <%= "class='current'" if brand == @brand %>><%= link_to(brand.name, [brand_list, brand]) %></li>
-	<%- end -%>
-	</ul>
+  <ul>
+    <%- brand_list.category_brands.order(:position).each do |cb| -%>
+      <li <%= "class='current'" if cb.brand == @brand %>><%= link_to(cb.brand.name, [brand_list, cb.brand]) %></li>
+    <%- end -%>
+  </ul>
 </div>

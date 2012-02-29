@@ -14,8 +14,11 @@ Emeraldcg::Application.routes.draw do
     end
   end
 
-  resources :categories
   resources :categories do
+    member do
+      post :sort_brands
+    end
+    
     resources :brands do
       resources :products
     end

@@ -17,7 +17,7 @@ class Product < ActiveRecord::Base
       :url => "/system/product_audio/:id/:basename_:style.:extension",
       :path => ":rails_root/public/system/product_audio/:id/:basename_:style.:extension"
 
-
+  after_save :update_category_brands
   
   def self.per_page
       6
@@ -41,6 +41,12 @@ class Product < ActiveRecord::Base
   def self.find_vintage_spotlight
      spotlight = Spotlight.find_by_name("Vintage")
      spotlight.product
+  end
+
+  private
+
+  def update_category_brands
+    CategoryBrand.find_or_create_by_category_id_and_brand_id(self.category_id, self.brand_id)
   end
   
   

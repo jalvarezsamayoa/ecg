@@ -1,33 +1,33 @@
 <%= render :partial => 'shared/interior_hero' %>
 
 <div id="interior_wrapper">
-    <div id="interior_header_absolute">
-        <h6 id="int_header">Categories</h6>
-    </div>
-    
-    <div id="cb_header_bg"><h5 id="sub_green_head"></h5></div>
-    
- <div id="interior_pad">
+  <div id="interior_header_absolute">
+    <h6 id="int_header">Categories</h6>
+  </div>
+
+  <div id="cb_header_bg"><h5 id="sub_green_head"></h5></div>
+
+  <div id="interior_pad">
 
 
-<table>
-  <tr>
-    <th>Name</th>
-  </tr>
+    <table>
+      <tr>
+        <th>Name</th>
+      </tr>
 
-<% @categories.each do |category| %>
-  <tr>
-    <td><%=h category.name %></td>
- 
-    <td>| <%= link_to 'Edit', edit_category_path(category) %></td>
-  </tr>
-<% end %>
-</table>
+      <% @categories.each do |category| %>
+        <tr>
+          <td><%=h category.name %></td>
 
-<br />
+          <td>| <%= link_to 'Edit', edit_category_path(category) %></td>
+        </tr>
+      <% end %>
+    </table>
 
-<%= link_to 'New category', new_category_path %>
+    <br />
 
-</div>
+    <%= link_to 'New category', new_category_path %>
+
+  </div>
 </div>
 <%= render :partial => 'shared/interior_footer' %>

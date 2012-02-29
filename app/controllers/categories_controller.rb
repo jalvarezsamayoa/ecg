@@ -18,13 +18,13 @@ class CategoriesController < ApplicationController
   # GET /categories/1.xml
   def show
     @category = Category.find(params[:id])
-    @brands = @category.brands.find(:all, :order => "name")
+    @brands = @category.category_brands.includes(:brand)
     @categories = Category.find(:all)
     @meta_title = "#{@category.name}"
 
     respond_to do |format|
       format.html do |wants|
-        @brand = @brands.first
+        @brand = @brands.first.brand
         @search = Product.where("brand_id = ? and category_id = ?" , @brand.id, @category.id)
         @products = @search.paginate(:page => params[:page], :per_page => 12)
         #.order(params[:order] || :descend_by_price)
@@ -96,4 +96,15 @@ class CategoriesController < ApplicationController
   #    format.xml  { head :ok }
   #  end
   #end
+
+  def sort_brands
+    @category = Category.find(params[:id])
+
+    @category.category_brands.each do |cb|
+      cb.position = params['category_brand'].index(cb.id.to_s) + 1
+      cb.save
+    end
+
+    render :nothing => true
+  end
 end

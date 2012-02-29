@@ -2,6 +2,8 @@ class Brand < ActiveRecord::Base
   has_many :products
   belongs_to :category
 
+  has_many :category_brands, :order => "position"
+
   extend FriendlyId
   friendly_id :name, :use => :slugged
 

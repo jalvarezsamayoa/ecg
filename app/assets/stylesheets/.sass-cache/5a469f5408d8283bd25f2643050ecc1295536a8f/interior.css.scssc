@@ -1,10 +1,10 @@
 3.0.15 (Classy Cassidy)
-932ceeff98c0654922e60590c4f0f89957eccd07
+89d3005d41c4d1c90b41f34c56e9f61212e87097
 o:Sass::Tree::RootNode
 :
 @linei:@options{:
 cacheT:syntax:	scss:property_syntax0:
-style:nested:filename"S/home/javier/Projects/Ravenna/Ecg/ecg/app/assets/stylesheets/interior.css.scss:load_paths[".:cache_location"./.sass-cache:line_comments0:@has_childrenT:@template"H+#interior_wrapper {
+style:nested:filename"S/home/javier/Projects/Ravenna/Ecg/ecg/app/assets/stylesheets/interior.css.scss:load_paths[".:cache_location"./.sass-cache:line_comments0:@has_childrenT:@template"-#interior_wrapper {
     width: 968px;
     height: auto;
     background-image: url(interior_bg.png);
@@ -448,7 +448,27 @@ style:nested:filename"S/home/javier/Projects/Ravenna/Ecg/ecg/app/assets/styles
         padding: 10px;
     }
 }
-:@children[Io:Sass::Tree::RuleNode;i;@:
+
+/*--------------------------------------------*/
+/* Category - Edit */
+/*--------------------------------------------*/
+
+.edit_category {
+    #brands {
+        list-style-type: none;
+
+        li {
+            padding: 3px 0 3px 30px;
+            margin: 3px 0 3px 0;
+            border: 1px solid #999;
+            background-image: url(stack.png);
+            background-repeat: no-repeat;
+            background-position: 2px 5px;
+        }
+    }
+}
+
+:@children[Mo:Sass::Tree::RuleNode;i;@:
 @tabsi ;T:
 @rule["#interior_wrapper;[o:Sass::Tree::PropNode;i:@prop_syntax:new:@valueo:Sass::Script::String:
 @type:identifier:@context:default;"
@@ -636,4 +656,5 @@ width;[ o;;i˜;@;i ;T;["#other_edit;[o;;i™;;;o;;;;; ;
 o;;iž;;;o;;;;; ;"3px 0 3px 3px;@;i ;!["padding;[ o;;iŸ;;;o;;;;; ;"3px 0 3px 0;@;i ;!["margin;[ o;;i ;;;o;;;;; ;"1px solid #999;@;i ;!["border;[ o;;i¡;;;o;;;;; ;"	#ccc;@;i ;!["background;[ o;;i¢;;;o;;;;; ;"
 200px;@;i ;!["
 width;[ o;";i¤;#0;"/* Links Style */;@;$[ ;[ o;;i¦;@;i ;T;["#links_table;[o;;i§;@;i ;T;["td;[o;;i¨;@;i ;T;["img;[o;;i©;;;o;;;;; ;"2px;@;i ;!["padding;[ o;;iª;;;o;;;;; ;"1px solid #999;@;i ;!["border;[ o;;i«;;;o;;;;; ;"	10px;@;i ;!["margin-right;[ o;;i¬;;;o;;;;; ;"	none;@;i ;!["border;[ o;;i­;@;i ;T;["tr;[o;;i®;;;o;;;;; ;"1px solid #999;@;i ;!["border-bottom;[ o;";i°;#0;"5/*--------------------------------------------*/;@;$[ ;[ o;";i±;#0;"/* Product - Edit */;@;$[ ;[ o;";i²;#0;"5/*--------------------------------------------*/;@;$[ ;[ o;;i´;@;i ;T;["#add_photo, .fields;[o;;i¶;@;i ;T;[".photo;[	o;;i·;;;o;;;;; ;"	100%;@;i ;!["
-width;[ o;;i¸;;;o;;;;; ;"	10px;@;i ;!["margin-bottom;[ o;;i¹;;;o;;;;; ;"1px solid #999;@;i ;!["border;[ o;;iº;;;o;;;;; ;"	10px;@;i ;!["padding;[ 
+width;[ o;;i¸;;;o;;;;; ;"	10px;@;i ;!["margin-bottom;[ o;;i¹;;;o;;;;; ;"1px solid #999;@;i ;!["border;[ o;;iº;;;o;;;;; ;"	10px;@;i ;!["padding;[ o;";i¾;#0;"5/*--------------------------------------------*/;@;$[ ;[ o;";i¿;#0;"/* Category - Edit */;@;$[ ;[ o;";iÀ;#0;"5/*--------------------------------------------*/;@;$[ ;[ o;;iÂ;@;i ;T;[".edit_category;[o;;iÃ;@;i ;T;["#brands;[o;;iÄ;;;o;;;;; ;"	none;@;i ;!["list-style-type;[ o;;iÆ;@;i ;T;["li;[o;;iÇ;;;o;;;;; ;"3px 0 3px 30px;@;i ;!["padding;[ o;;iÈ;;;o;;;;; ;"3px 0 3px 0;@;i ;!["margin;[ o;;iÉ;;;o;;;;; ;"1px solid #999;@;i ;!["border;[ o;;iÊ;;;o;
+;iÊ;;;; ;"url(stack.png);{ ;@;i ;!["background-image;[ o;;iË;;;o;;;;; ;"no-repeat;@;i ;!["background-repeat;[ o;;iÌ;;;o;;;;; ;"2px 5px;@;i ;!["background-position;[ 
