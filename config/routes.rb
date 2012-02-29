@@ -13,7 +13,7 @@ Emeraldcg::Application.routes.draw do
       post :sort_photos
     end
   end
-    
+
   resources :categories
   resources :categories do
     resources :brands do
@@ -34,13 +34,23 @@ Emeraldcg::Application.routes.draw do
   match 'repairs' => 'static#repairs', :as => :repairs
   match 'admin' => 'static#admin', :as => :admin
 
-  resources :users
+#  resources :users
 
-  devise_for :users, :controllers => { :sessions => "users/sessions" }
-  devise_scope :user do
-    get '/login' => 'users/sessions#new'
-    get '/logout' => 'users/sessions#destroy'
+  devise_for :users,
+  :path_names  => { :sign_out => 'logout',
+    :sign_in  => 'login',
+    :sign_up  => 'register' },
+  :controllers => { :sessions => 'users/sessions' } do
+
+    # Sessions
+    post '/login'         => 'users/sessions#create',       :as => :user_session
+    get  '/login'         => 'users/sessions#new',          :as => :new_user_session
+    get  '/logout'        => 'users/sessions#destroy',      :as => :destroy_user_session
+
   end
+
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

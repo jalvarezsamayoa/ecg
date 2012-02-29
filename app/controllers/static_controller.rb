@@ -1,5 +1,6 @@
 class StaticController < ApplicationController
   before_filter :find_categories , :redirect_mobile
+  before_filter :authenticate_user!, :only => [ :admin ]
 
   def home
     @banner = Banner.first

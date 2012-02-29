@@ -17,7 +17,7 @@ class BrandsController < ApplicationController
   # GET /brands/1
   # GET /brands/1.xml
   def show
-    @category = Category.find_by_url_name(params[:category_id])
+    @category = Category.find(params[:category_id])
     @brand = Brand.find(params[:id])
 
     @search = Product.where("brand_id = ? and  category_id = ?", @brand.id, @category.id).order( params[:order] || 'price DESC')    

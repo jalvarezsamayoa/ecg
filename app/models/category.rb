@@ -4,13 +4,13 @@ class Category < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :name, :use => :slugged
- 
- validates_presence_of :url_name
- validates_uniqueness_of :url_name
- 
- def to_param
-  self.url_name
- end
+
+  validates_presence_of :url_name
+  validates_uniqueness_of :url_name
+
+  def to_param
+    self.url_name
+  end
 end
 # == Schema Information
 #

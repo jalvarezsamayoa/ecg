@@ -5,7 +5,6 @@ class Brand < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, :use => :slugged
 
-
   #Validations
   validates_presence_of :name
   def <=> other
