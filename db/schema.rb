@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120229223453) do
+ActiveRecord::Schema.define(:version => 20120301201126) do
 
   create_table "banners", :force => true do |t|
     t.string   "name"
@@ -56,6 +56,17 @@ ActiveRecord::Schema.define(:version => 20120229223453) do
   add_index "category_brands", ["brand_id"], :name => "index_category_brands_on_brand_id"
   add_index "category_brands", ["category_id", "brand_id"], :name => "index_category_brands_on_category_id_and_brand_id", :unique => true
   add_index "category_brands", ["category_id"], :name => "index_category_brands_on_category_id"
+
+  create_table "featured_videos", :force => true do |t|
+    t.string   "title"
+    t.string   "embeded_code"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
 
   create_table "links", :force => true do |t|
     t.string   "name"

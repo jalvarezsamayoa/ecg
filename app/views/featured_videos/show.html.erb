@@ -1,0 +1,31 @@
+<%= render :partial => 'shared/interior_hero' %>
+<div id="interior_wrapper">
+
+  <div id="interior_header_absolute">
+    <h6 id="int_header">Embeded Video</h6>
+  </div>
+
+  <div id="interior_sub_head">
+    <h5 id="sub_green_head"><%= truncate resource.title %></h5>
+  </div>
+
+  <div id="interior_pad">
+
+    <fieldset>
+      <legend><%= resource.title %></legend>
+
+      <p>
+        <%= label_tag :preview_image %><br />
+        <%= image_tag resource.image.url(:catalog) %>
+      </p>
+
+      <p>
+        <%= label_tag :embeded_video %><br />
+        <%= link_to resource.embeded_code %>
+      </p>
+    </fieldset>
+
+  </div>
+
+</div>
+<%= render :partial => 'shared/interior_footer' %>

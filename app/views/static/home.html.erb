@@ -7,6 +7,13 @@
 
     </script>
   <% end %>
+
+
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function(){
+      $("a[rel^='prettyPhoto']").prettyPhoto();
+    });
+  </script>
 <% end %>
 
 
@@ -65,8 +72,7 @@
 
     <% else %>
       <div id="new_image">
-        <%= link_to (image_tag @new_spotlight.front_photo.data.url(:spotlight)), @new_spotlight %>
-        <div id="new_image_title"><%= link_to @new_spotlight.title, @new_spotlight %></div>
+        <%= link_to image_tag(@new_spotlight.image.url(:spotlight), :alt => @new_spotlight.title), @new_spotlight.embeded_code, :title =>  @new_spotlight.title, :rel => "prettyPhoto" %>
       </div>
     <% end %>
   </div>

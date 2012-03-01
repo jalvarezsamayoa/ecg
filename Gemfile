@@ -19,6 +19,10 @@ gem "nested_form", :git => 'https://github.com/ryanb/nested_form.git'
 #manage image sorting
 gem "acts_as_list", :git => 'git://github.com/swanandp/acts_as_list.git'
 
+# manage controllers
+gem 'inherited_resources'
+
+
 gem 'mysql2'
 
 

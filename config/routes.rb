@@ -1,5 +1,6 @@
 Emeraldcg::Application.routes.draw do
 
+  resources :featured_videos
   resources :links
   resources :staffs
   resources :brands

@@ -1,0 +1,34 @@
+<%= render :partial => 'shared/interior_hero' %>
+<div id="interior_wrapper">
+  <div id="interior_header_absolute">
+    <h6 id="int_header">Featured Videos</h6>
+  </div>
+
+  <div id="interior_sub_head"><h5 id="sub_green_head"></h5></div>
+  <div id="interior_pad">
+
+
+    <table cellspacing="0" cellpadding="0">
+      <tr>
+        <th>Title</th>
+        <th>Preview Image</th>
+      </tr>
+
+      <% unless collection.blank? %>
+      <% collection.each do |featured_video| %>
+        <tr>
+          <td><%=h featured_video.title %></td>
+          <td><%= image_tag(featured_video.image.url(:catalog)) %></td>
+          <td><%= link_to 'Show', featured_video_path(featured_video) %> | <%= link_to 'Edit', edit_featured_video_path(featured_video) %> | <%= link_to 'Destroy', featured_video_path(featured_video), :confirm => 'Are you sure?', :method => :delete %></td>
+        </tr>
+      <% end %>
+      <% end %>
+    </table>
+
+    <br />
+
+    <%= link_to 'New Featured Video', new_featured_video_path %>
+
+  </div>
+</div>
+<%= render :partial => 'shared/interior_footer' %>

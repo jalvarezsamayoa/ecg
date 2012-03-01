@@ -19,4 +19,5 @@
 //= require Rosewood_Std_400.font
 //= require supersleight-min
 //= require jquery.pikachoose
+//= require jquery.prettyPhoto
 //= require_tree .

@@ -6,9 +6,11 @@ class StaticController < ApplicationController
     @banner = Banner.first
     @visitors = Visitor.find(:all, :order => "rand()", :limit => 1)
     @categories = Category.all
-    @new_spotlight = Product.find_new_spotlight
+
     @vintage_spotlight = Product.find_vintage_spotlight
     @meta_title = "Home"
+
+    @new_spotlight = FeaturedVideo.first
 
   end
   def history

@@ -10,5 +10,6 @@
  *
  *= require_self
  *= jquery-ui-1.8.18.custom
+ *= prettyPhoto
  *= require_tree .
 */
