@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/bmabey/database_cleaner.git
+  revision: fd659328707fc0a97f6598b345084888984c02fc
+  specs:
+    database_cleaner (0.7.1)
+
+GIT
   remote: git://github.com/ctran/annotate_models.git
   revision: a43c08f0eb4d69a48c6830630ebb60e35ccb2d2d
   specs:
@@ -69,7 +75,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.2.0)
-    database_cleaner (0.7.1)
     devise (2.0.4)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
@@ -221,7 +226,7 @@ DEPENDENCIES
   acts_as_list!
   annotate!
   coffee-rails (~> 3.2.1)
-  database_cleaner
+  database_cleaner!
   devise
   draper
   factory_girl_rails

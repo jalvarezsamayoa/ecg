@@ -54,7 +54,7 @@ end
 group :development, :test do
   gem 'faker'
   gem 'factory_girl_rails'
-  gem "database_cleaner"
+  gem "database_cleaner", :git => 'git://github.com/bmabey/database_cleaner.git'
   gem "steak"
 end
 

@@ -3,7 +3,7 @@ class AddSlugToProducts < ActiveRecord::Migration
     add_column :products, :slug, :string
     add_index :products, :slug
 
-    Product.find_each(&:save)
+#    Product.find_each(&:save)
     
   end
 end

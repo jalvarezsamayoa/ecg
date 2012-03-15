@@ -3,6 +3,6 @@ class AddSlugToCategories < ActiveRecord::Migration
     add_column :categories, :slug, :string
     add_index :categories, :slug
 
-    Category.find_each(&:save)
+#    Category.find_each(&:save)
   end
 end
